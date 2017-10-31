@@ -15,14 +15,31 @@ typedef Vec::iterator Vit;
 class DiscreteLms
 {
 public:
+
+    struct Pair
+    {
+        double  val;
+        int index;
+    };
+
+    struct byVal
+    {
+        bool operator()(const Pair &left,const Pair &right)
+        {
+            return left.val < right.val;
+        }
+    };
+
     DiscreteLms(Mat* A, Vec* b);
 
     int generateRandomSampleSize();
     int generateRandomSample();
 
-
     int solve();
     int deleteMatVecRows();
+
+    double cmpMedian(std::vector<Pair> &vsort);
+    int reweightDistribution(const std::vector<Pair> &vsort);
 
 private:
 
@@ -39,10 +56,11 @@ private:
     Index m_cols;
     Index m_sample_size;
 
+    unsigned int m_K;
     vector<int> m_distribution;
-    int m_K;
-
     vector<int> m_deleted_rows;
+
+    double m_median;
 
 };
 

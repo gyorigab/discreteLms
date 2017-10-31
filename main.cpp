@@ -9,13 +9,13 @@ typedef GNU_gama::Index Index;
 typedef GNU_gama::Mat<double> Mat;
 typedef GNU_gama::Vec<double> Vec;
 
-int main(int argc, char *argv[])
+int main()
 {
 
     ifstream AFileInput, bFileInput;
 
-    AFileInput.open("../data/A");
-    bFileInput.open("../data/b");
+    AFileInput.open("../discreteLms/data/A");
+    bFileInput.open("../discreteLms/data/b");
 
     Mat A;
     Vec b;
