@@ -198,7 +198,7 @@ int DiscreteLms::reweightDistribution(const std::vector<Pair> &vsort)
     int index = 0;
 
     // pociatocna zmena pravdepodobnosti rozdelenia
-    double changedDistribution  = 100.0;
+    double changedDistribution  = 10.0;
     // linearny prirastok prirastok
     double diff = changedDistribution/(m_rows/2);
 
@@ -216,7 +216,7 @@ int DiscreteLms::reweightDistribution(const std::vector<Pair> &vsort)
         changedDistribution -= diff;
     }
 
-    changedDistribution = 100.0;
+    changedDistribution = 10.0;
 
     // najmensia oprava ma najvacsi ubytok pravdepodobnosti
     // ze bude odstranena z nahodneho vzoru v dalsom kroku

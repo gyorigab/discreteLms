@@ -14,6 +14,11 @@ int main()
 
     ifstream AFileInput, bFileInput;
 
+    // b2 - dve odlahle merania 43,42 (indexovane od 0)
+    // b8 - 8 odlahlych merani 43..43-8
+
+    // spravny vysledok x : 0.00318222, 0.00249310
+
     AFileInput.open("../discreteLms/data/A");
     bFileInput.open("../discreteLms/data/b2");
 
