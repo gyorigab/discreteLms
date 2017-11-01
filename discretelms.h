@@ -41,6 +41,8 @@ public:
     double cmpMedian(std::vector<Pair> &vsort);
     int reweightDistribution(const std::vector<Pair> &vsort);
 
+    void initDistribution();
+
 private:
 
     Mat* m_A;
@@ -57,8 +59,13 @@ private:
     Index m_sample_size;
 
     unsigned int m_K;
-    vector<int> m_distribution;
-    vector<int> m_deleted_rows;
+    vector<double> m_distribution;
+    vector<unsigned int> m_deleted_rows;
+    vector<unsigned int> m_sample;
+
+    unsigned int m_experiments_count;
+    unsigned int m_end_experiment;
+    unsigned int m_max_iter;
 
     double m_median;
 

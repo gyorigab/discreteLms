@@ -15,7 +15,7 @@ int main()
     ifstream AFileInput, bFileInput;
 
     AFileInput.open("../discreteLms/data/A");
-    bFileInput.open("../discreteLms/data/b");
+    bFileInput.open("../discreteLms/data/b2");
 
     Mat A;
     Vec b;
