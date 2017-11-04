@@ -3,6 +3,7 @@
 
 #include <matvec.h>
 #include <vector>
+#include <set>
 
 using namespace std;
 
@@ -33,15 +34,21 @@ public:
     DiscreteLms(Mat* A, Vec* b);
 
     int generateRandomSampleSize();
+    int generateRandomSampleSet();
     int generateRandomSample();
 
     int solve();
     int deleteMatVecRows();
+    int deleteMatVecRowsSet();
+
+    bool exists(unsigned int index);
 
     double cmpMedian(std::vector<Pair> &vsort);
     int reweightDistribution(const std::vector<Pair> &vsort);
 
     void initDistribution();
+
+    void cmpFinalEstimation();
 
 private:
 
@@ -61,11 +68,21 @@ private:
     unsigned int m_K;
     vector<double> m_distribution;
     vector<unsigned int> m_deleted_rows;
+    set<unsigned int> m_deleted_rows_set;
+
     vector<unsigned int> m_sample;
+    set<unsigned int> m_sample_set;
+
+    vector<Vec> m_results;
+    vector< set<unsigned int> > m_best_sample_sets;
+
+    unsigned int m_outlieres_count;
 
     unsigned int m_experiments_count;
     unsigned int m_end_experiment;
     unsigned int m_max_iter;
+
+    double m_max_estimation_diff;
 
     double m_median;
 

@@ -20,7 +20,7 @@ int main()
     // spravny vysledok x : 0.00318222, 0.00249310
 
     AFileInput.open("../discreteLms/data/A");
-    bFileInput.open("../discreteLms/data/b2");
+    bFileInput.open("../discreteLms/data/b8");
 
     Mat A;
     Vec b;

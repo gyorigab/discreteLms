@@ -21,12 +21,63 @@ DiscreteLms::DiscreteLms(Mat *A, Vec *b): m_distribution(A->rows(),100.0)
 
     m_experiments_count = m_rows/2;
     m_end_experiment = 100;
-    m_max_iter = 1000;
+    m_max_iter = 100;
+
+    m_max_estimation_diff = 10e-4; // [mm]
+    m_outlieres_count = 0;
 }
 
 void DiscreteLms::initDistribution()
 {
     m_distribution.assign(m_A->rows(),100.0);
+}
+
+void DiscreteLms::cmpFinalEstimation()
+{
+    bool found = false;
+
+    // hladam stejne dobry odhad ako nejlepsi odhad ale s minimalnym
+    // poctom vylucenych merani
+    for(int i = m_results.size()-1; i >= 0; i--)
+    {
+        for(unsigned int j = 1; j <= m_cols; j++)
+        {
+            // testujem ci nieje nejaky podobny odhad ako vysledny s mensim
+            // poctom odstranenych merani
+            if(abs(m_x(j) - m_results[i](j)) > m_max_estimation_diff)
+            {
+                // pokial som tu tak to znamena ze tento odhad uz nieje spravny
+                // a ulozim do vysledneho odhadu ten predchdzi posledny spravny
+                if( i+1 < m_results.size() )
+                {
+                    m_x = m_results[i+1];
+                    m_sample_set = m_best_sample_sets[i+1];
+                }
+                found = true;
+                break;
+            }
+        }
+        if(found) break;
+    }
+
+    // pokial to nenaslo ani jeden horsi odhad od odhadu
+    // s najlepsim medianom tak to vyzera ze v merani bude max
+    // jedno odlahle meranie
+    if(!found)
+    {
+        m_x = m_results[0];
+        m_sample_set = m_best_sample_sets[0];
+    }
+
+    cout << "\nOdstranene riadky vysledneho odhadu: ";
+
+    for(auto a: m_sample_set)
+    {
+        cout << a << " ";
+    }
+
+    cout << "\nVysledny odhad: \n";
+    cout << m_x;
 }
 
 int DiscreteLms::solve()
@@ -60,7 +111,7 @@ int DiscreteLms::solve()
         for(unsigned int expIter = 0, xconvergence = 0; expIter < m_max_iter; expIter++)
         {
             // ziskam nahodny vzor sustavy
-            deleteMatVecRows();
+            deleteMatVecRowsSet();
 
             Vec x(m_cols);
             Vec v(m_rows);
@@ -110,7 +161,7 @@ int DiscreteLms::solve()
                 m_x = x;
                 m_v = v;
 
-                m_sample = m_deleted_rows;
+                m_sample_set = m_deleted_rows_set;
 
                 cout << endl;
 
@@ -127,20 +178,38 @@ int DiscreteLms::solve()
                 // if(xconvergence++ == m_end_experiment) break;
             }
         }
+
+        // Vkladam najlepsi odhad pre kazdu konkretnu velkost vzoru.
+        // Potom budem kontrolovat zmenu odhadu od najvacsieho poctu odstranenych merani
+        // ked sa odhad nebude zasadne menit tak pouzijem odhad vztahujuci sa
+        // k najmensiemu poctu odstranenych merani.
+        m_results.push_back(m_x);
+        m_best_sample_sets.push_back(m_sample_set);
     }
 
-    // Pre tieto vynulovane riadky je median extremny
+    cout << "\nOdstranene riadky najlepsieho odhadu: ";
 
-    cout << "\n Odstranene riadky: ";
-
-    for(auto a: m_sample)
+    for(auto a: m_sample_set)
     {
         cout << a << " ";
     }
 
+    cout << "\nOdhad s min medianom: \n";
     cout << m_x;
 
+    cmpFinalEstimation();
+
     return 0;
+}
+
+bool DiscreteLms::exists(unsigned int index)
+{
+    for(auto v: m_deleted_rows)
+    {
+        if(v==index)
+            return true;
+    }
+    return false;
 }
 
 int DiscreteLms::deleteMatVecRows()
@@ -153,13 +222,14 @@ int DiscreteLms::deleteMatVecRows()
     m_A_cpy = *m_A;
     m_b_cpy = *m_b;
 
-    int vecIndex = 0;
     double zero = 0.0;
 
     for(unsigned int i = 1; i <= m_A->rows(); i++)
     {
+        // INFO Ales tu bola chyba. Nevynuloval som niektore vybrane riadky
+
         // pokial je riadkovy index v zozname na odstranenie
-        if( i-1 == m_deleted_rows[vecIndex] )
+        if(exists(i-1))
         {
             for(unsigned int j = 1; j<= m_A->cols(); j++)
             {
@@ -169,10 +239,41 @@ int DiscreteLms::deleteMatVecRows()
 
             // vynulujem pvok vektora pravej strany
             m_b_cpy(i) = zero;
-            vecIndex++;
         }
     }
 
+    return 0;
+}
+
+int DiscreteLms::deleteMatVecRowsSet()
+{
+    // vygenerujem nahodne riadky vektoru
+    generateRandomSampleSet();
+
+    // kopirujem povodnu maticu planu a vektora pravej strany
+    // do pracovnych objektov
+    m_A_cpy = *m_A;
+    m_b_cpy = *m_b;
+
+    set<unsigned int>::const_iterator it = m_deleted_rows_set.begin();
+    double zero = 0.0;
+
+    for(unsigned int i = 1; i <= m_A->rows(); i++)
+    {
+        // pokial je riadkovy index v zozname na odstranenie
+        if( i-1 == *it && it != m_deleted_rows_set.end() )
+        {
+            for(unsigned int j = 1; j<= m_A->cols(); j++)
+            {
+                // vynulujem riadok matice planu
+                m_A_cpy(i,j) = zero;
+            }
+
+            // vynulujem pvok vektora pravej strany
+            m_b_cpy(i) = zero;
+            it++;
+        }
+    }
     return 0;
 }
 
@@ -265,6 +366,25 @@ int DiscreteLms::generateRandomSample()
     for(unsigned int i=1; i <= m_K; i++)
     {
         m_deleted_rows.push_back(d(generator));
+    }
+
+    return 0;
+}
+
+// generujem nahodny vzor na zaklade diskretneho rozdelenia
+int DiscreteLms::generateRandomSampleSet()
+{
+    std::random_device rd;
+    std::mt19937 generator(rd());
+
+    std::discrete_distribution<> d(m_distribution.begin(), m_distribution.end());
+
+    m_deleted_rows_set.clear();
+
+    // vygenerujem mnozinu nahodnych riadkov ktore budu vynulovane
+    while(m_deleted_rows_set.size() <= m_K)
+    {
+        m_deleted_rows_set.insert(d(generator));
     }
 
     return 0;
