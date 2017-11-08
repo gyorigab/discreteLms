@@ -9,7 +9,7 @@ typedef GNU_gama::Index Index;
 typedef GNU_gama::Mat<double> Mat;
 typedef GNU_gama::Vec<double> Vec;
 
-int main()
+int main(int argc, char *argv[])
 {
 
     ifstream AFileInput, bFileInput;
@@ -19,8 +19,14 @@ int main()
 
     // spravny vysledok x : 0.00318222, 0.00249310
 
-    AFileInput.open("../discreteLms/data/A");
-    bFileInput.open("../discreteLms/data/b8");
+    //AFileInput.open("../discreteLms/data/A");
+    //bFileInput.open("../discreteLms/data/b2");
+
+    if(argc > 2)
+    {
+        AFileInput.open(argv[1]);
+        bFileInput.open(argv[2]);
+    }
 
     Mat A;
     Vec b;
