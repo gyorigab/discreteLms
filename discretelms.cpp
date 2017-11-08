@@ -84,108 +84,65 @@ int DiscreteLms::solve()
 {
     // TODO pocitat SVD pseudoinverziu (momentalne regularny priklad takze OK)
 
-    for(unsigned int expNum = 0; expNum < m_experiments_count; expNum++ )
+    initDistribution();
+
+    for(unsigned int expIter = 0; expIter < m_max_iter; expIter++)
     {
-        // INFO Ales: Tu je asi zbytocne generovat m_K
-        // mozem ho postupne znizovat a vyhotovit 1000 experimentov pre
-        // K v intervale 0..N/2
-
         // generujem nahodny pocet odstranenych riadkov
-        //m_K = generateRandomSampleSize();
+        m_K = generateRandomSampleSize();
 
+        // ziskam nahodny vzor sustavy
+        deleteMatVecRowsSet();
 
-        // INFO Ales: so zvacsujucim poctom riadkov stupa pravdepodobnost
-        // ze trafim odlahle merania. To znamena ze pocet odstranenych riadkov
-        // bude vzdy o dost vacsi ako je skutocny pocet odlahlych merani
+        Vec x(m_cols);
+        Vec v(m_rows);
 
-        // INFO Ales: pozitivne ale je ze LMS da casto spravny vysledok aj pri pouziti
-        // mensieho poctu odstranenych riadkov
+        // vytvaram normalne rovnice
+        Mat N = trans(m_A_cpy) * m_A_cpy;
+        Vec n = trans(m_A_cpy) * m_b_cpy;
 
-        // pocet odstranenych riadkov
-        m_K++;
+        // riesim sustavu x = A^(-1)*b
+        x = inv(N) * n;
 
-        // cout << "Pocet odstranenych riadkov: " << m_K << endl;
+        // pocitam vyrovnane opravy z povodnej sustavy
+        v = *m_A * x - *m_b;
 
-        initDistribution();
+        std::vector<Pair> vsort;
+        Pair pair;
 
-        for(unsigned int expIter = 0, xconvergence = 0; expIter < m_max_iter; expIter++)
+        for ( unsigned int i = 1; i <= m_rows; i++ )
         {
-            // ziskam nahodny vzor sustavy
-            deleteMatVecRowsSet();
+            // pocitam stvorec vyrovnanych oprav
+            v(i) *= v(i);
 
-            Vec x(m_cols);
-            Vec v(m_rows);
+            // aby som nestratil informaciu o indexoch po triedeni
+            pair.val   = v(i);
+            pair.index = i;
 
-            // vytvaram normalne rovnice
-            Mat N = trans(m_A_cpy) * m_A_cpy;
-            Vec n = trans(m_A_cpy) * m_b_cpy;
+            vsort.push_back(pair);
+        }
 
-            // riesim sustavu x = A^(-1)*b
-            x = inv(N) * n;
+        double median = cmpMedian(vsort);
 
-            // pocitam vyrovnane opravy z povodnej sustavy
-            v = *m_A * x - *m_b;
-
-            std::vector<Pair> vsort;
-            Pair pair;
-
-            for ( unsigned int i = 1; i <= m_rows; i++ )
-            {
-                // pocitam stvorec vyrovnanych oprav
-                v(i) *= v(i);
-
-                // aby som nestratil informaciu o indexoch po triedeni
-                pair.val   = v(i);
-                pair.index = i;
-
-                vsort.push_back(pair);
-            }
-
-            double median = cmpMedian(vsort);
-
-            // kontrola indexov a sortovani
-            /*for(auto vs : vsort)
-            {
-                cout << vs.index << ":" << vs.val << endl;
-            }*/
-
-            // INFO Ales: Dohodli sme sa ze budeme menit rozdeleni len pri
-            // poklesu medianu ale tak to "konverguje" rychlejsie
-
+        if( median < m_median)
+        {
             // prerozdelim pravdpodobnost vynulovania jednotlivych riadkov
             reweightDistribution(vsort);
 
-            if( median < m_median)
-            {
-                m_median = median;
-                m_x = x;
-                m_v = v;
+            m_median = median;
+            m_x = x;
+            m_v = v;
 
-                m_sample_set = m_deleted_rows_set;
+            m_sample_set = m_deleted_rows_set;
 
-                cout << endl;
+            cout << endl;
 
-                cout << " Experiment No.: "       << expNum
-                     << " << Iterace: "           << expIter
-                     << " << Hodnota medianu: "   << median << endl;
-            }
-            else
-            {
-                //INFO Ales: toto je asi irelevantne
-
-                // pokud median nekonverguje zvol novu velkost vzoru
-                // a experiment opakuj
-                // if(xconvergence++ == m_end_experiment) break;
-            }
+            cout << " << Iterace: "           << expIter
+                 << " << Hodnota medianu: "   << median << endl;
         }
 
-        // Vkladam najlepsi odhad pre kazdu konkretnu velkost vzoru.
-        // Potom budem kontrolovat zmenu odhadu od najvacsieho poctu odstranenych merani
-        // ked sa odhad nebude zasadne menit tak pouzijem odhad vztahujuci sa
-        // k najmensiemu poctu odstranenych merani.
-        m_results.push_back(m_x);
-        m_best_sample_sets.push_back(m_sample_set);
     }
+
 
     cout << "\nOdstranene riadky najlepsieho odhadu: ";
 
@@ -196,8 +153,6 @@ int DiscreteLms::solve()
 
     cout << "\nOdhad s min medianom: \n";
     cout << m_x;
-
-    cmpFinalEstimation();
 
     return 0;
 }
