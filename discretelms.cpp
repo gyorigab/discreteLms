@@ -2,6 +2,7 @@
 
 #include <random>
 #include <algorithm>
+#include <matvec/pinv.h>
 
 DiscreteLms::DiscreteLms(Mat *A, Vec *b): m_distribution(A->rows(),100.0)
 {
@@ -102,7 +103,7 @@ int DiscreteLms::solve()
         Vec n = trans(m_A_cpy) * m_b_cpy;
 
         // riesim sustavu x = A^(-1)*b
-        x = inv(N) * n;
+        x = pinv(N) * n;
 
         // pocitam vyrovnane opravy z povodnej sustavy
         v = *m_A * x - *m_b;
