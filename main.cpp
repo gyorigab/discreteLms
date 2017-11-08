@@ -19,10 +19,10 @@ int main(int argc, char *argv[])
 
     // spravny vysledok x : 0.00318222, 0.00249310
 
-    //AFileInput.open("../discreteLms/data/A");
-    //bFileInput.open("../discreteLms/data/b2");
+    //AFileInput.open("../discreteLms/data_lsq/illc1033.mtx.full");
+    //bFileInput.open("../discreteLms/data_lsq/illc1033.rhs1.mtx");
 
-    if(argc > 2)
+   if(argc > 2)
     {
         AFileInput.open(argv[1]);
         bFileInput.open(argv[2]);
@@ -33,6 +33,9 @@ int main(int argc, char *argv[])
 
     AFileInput >> A;
     bFileInput >> b;
+
+    cout << A;
+    cout << b;
 
     DiscreteLms dLms(&A,&b);
 

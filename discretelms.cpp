@@ -143,7 +143,6 @@ int DiscreteLms::solve()
 
     }
 
-
     cout << "\nOdstranene riadky najlepsieho odhadu: ";
 
     for(auto a: m_sample_set)
@@ -302,7 +301,9 @@ int DiscreteLms::generateRandomSampleSize()
 {
     std::random_device rd;
     std::mt19937 generator(rd());
-    std::uniform_int_distribution<Index> d(1, m_rows/2-1);
+
+    int upperBound = m_rows/2-1 > m_cols ? m_rows/2-1 : m_cols-1;
+    std::uniform_int_distribution<Index> d(1, upperBound);
 
     return d(generator);
 }
