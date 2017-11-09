@@ -1,0 +1,1058 @@
+<?xml version="1.0" ?>
+<!DOCTYPE gama-local-adjustment SYSTEM "gama-local-adjustment.dtd">
+
+<gama-local-adjustment version="0.5">
+
+<description> zakladna </description>
+
+<network-general-parameters
+   gama-local-version="1.11"
+   gama-local-algorithm="svd"
+   gama-local-compiler="GNU g++"
+   epoch="0.0000000"
+   axes-xy="sw"
+   angles="right-handed"
+/>
+
+<network-processing-summary>
+
+<coordinates-summary>
+   <coordinates-summary-adjusted>    <count-xyz>0</count-xyz> <count-xy>18</count-xy> <count-z>0</count-z> </coordinates-summary-adjusted>
+   <coordinates-summary-constrained> <count-xyz>0</count-xyz> <count-xy>18</count-xy> <count-z>0</count-z> </coordinates-summary-constrained>
+   <coordinates-summary-fixed>       <count-xyz>0</count-xyz> <count-xy>2</count-xy> <count-z>0</count-z> </coordinates-summary-fixed>
+</coordinates-summary>
+
+<observations-summary>
+   <distances>61</distances>
+   <directions>61</directions>
+   <angles>0</angles>
+   <xyz-coords>0</xyz-coords>
+   <h-diffs>0</h-diffs>
+   <z-angles>0</z-angles>
+   <s-dists>0</s-dists>
+   <vectors>0</vectors>
+</observations-summary>
+
+<project-equations>
+   <equations>122</equations>
+   <unknowns>40</unknowns>
+   <degrees-of-freedom>82</degrees-of-freedom>
+   <defect>0</defect>
+   <sum-of-squares>6.9667692e+09</sum-of-squares>
+   <connected-network/>
+</project-equations>
+
+<standard-deviation>
+   <apriori>1.0000000e+00</apriori>
+   <aposteriori>9.2174074e+03</aposteriori>
+   <used>apriori</used>
+
+   <probability>0.950</probability>
+   <!-- no test for apriori standard deviation -->
+   <ratio>1.000</ratio>
+   <lower>0.000</lower>
+   <upper>0.000</upper>
+   <passed/>
+
+   <confidence-scale>1.9599640e+00</confidence-scale>
+</standard-deviation>
+
+</network-processing-summary>
+
+<coordinates>
+
+<fixed>
+   <point> <id>1</id> <x>0.000000</x> <y>0.000000</y> </point>
+   <point> <id>16</id> <x>38.629860</x> <y>0.000000</y> </point>
+</fixed>
+
+<approximate>
+   <point> <id>2</id> <X>1.364202</X> <Y>-0.001145</Y> </point>
+   <point> <id>3</id> <X>3.861417</X> <Y>-0.000982</Y> </point>
+   <point> <id>4</id> <X>6.377972</X> <Y>0.000109</Y> </point>
+   <point> <id>5</id> <X>8.865011</X> <Y>-0.001005</Y> </point>
+   <point> <id>6</id> <X>11.375350</X> <Y>0.001060</Y> </point>
+   <point> <id>7</id> <X>13.865320</X> <Y>0.000589</Y> </point>
+   <point> <id>8</id> <X>16.354239</X> <Y>-0.000568</Y> </point>
+   <point> <id>9</id> <X>17.223925</X> <Y>-0.000071</Y> </point>
+   <point> <id>10</id> <X>19.761275</X> <Y>0.001079</Y> </point>
+   <point> <id>11</id> <X>21.329145</X> <Y>0.002272</Y> </point>
+   <point> <id>12</id> <X>23.852672</X> <Y>0.001398</Y> </point>
+   <point> <id>13</id> <X>26.359047</X> <Y>0.001462</Y> </point>
+   <point> <id>14</id> <X>28.804831</X> <Y>0.001092</Y> </point>
+   <point> <id>15</id> <X>33.804971</X> <Y>0.001666</Y> </point>
+   <point> <id>5001</id> <X>10.511161</X> <Y>-1.317571</Y> </point>
+   <point> <id>6001</id> <X>0.096962</X> <Y>1.994874</Y> </point>
+   <point> <id>6010</id> <X>19.761520</X> <Y>0.001380</Y> </point>
+   <point> <id>6016</id> <X>38.615058</X> <Y>0.735801</Y> </point>
+</approximate>
+
+<!-- capital X,Y,Z denote constrained coordinates -->
+<adjusted>
+   <point> <id>2</id> <X>2.054754</X> <Y>0.069841</Y> </point>
+   <point> <id>3</id> <X>3.943602</X> <Y>0.061510</Y> </point>
+   <point> <id>4</id> <X>6.405231</X> <Y>0.008775</Y> </point>
+   <point> <id>5</id> <X>8.877581</X> <Y>0.012157</Y> </point>
+   <point> <id>6</id> <X>11.398719</X> <Y>-0.057589</Y> </point>
+   <point> <id>7</id> <X>14.093223</X> <Y>-0.047230</Y> </point>
+   <point> <id>8</id> <X>16.335989</X> <Y>-0.034434</Y> </point>
+   <point> <id>9</id> <X>17.453993</X> <Y>-0.058346</Y> </point>
+   <point> <id>10</id> <X>19.703851</X> <Y>0.000317</Y> </point>
+   <point> <id>11</id> <X>21.303096</X> <Y>-0.038091</Y> </point>
+   <point> <id>12</id> <X>23.823553</X> <Y>-0.033547</Y> </point>
+   <point> <id>13</id> <X>26.327059</X> <Y>-0.027672</Y> </point>
+   <point> <id>14</id> <X>28.769980</X> <Y>-0.027740</Y> </point>
+   <point> <id>15</id> <X>33.761130</X> <Y>-0.057965</Y> </point>
+   <point> <id>5001</id> <X>10.565883</X> <Y>-1.341257</Y> </point>
+   <point> <id>6001</id> <X>-0.384522</X> <Y>0.131032</Y> </point>
+   <point> <id>6010</id> <X>19.835485</X> <Y>-0.039502</Y> </point>
+   <point> <id>6016</id> <X>38.717917</X> <Y>-0.084085</Y> </point>
+</adjusted>
+
+<orientation-shifts>
+   <orientation> <id>6001</id> <approx>10.444594</approx> <adj>16.703947</adj> </orientation>
+   <orientation> <id>6010</id> <approx>221.914570</approx> <adj>221.874489</adj> </orientation>
+   <orientation> <id>6016</id> <approx>6.473606</approx> <adj>4.149856</adj> </orientation>
+   <orientation> <id>5001</id> <approx>374.779545</approx> <adj>374.516008</adj> </orientation>
+</orientation-shifts>
+
+<!-- upper part of symmetric matrix band by rows -->
+<cov-mat>
+<dim>40</dim> <band>39</band>
+<flt>2.2211536e-04</flt> <flt>-2.7214969e-05</flt> <flt>1.0794905e-04</flt>
+<flt>3.6909715e-05</flt> <flt>1.0610897e-04</flt> <flt>2.4975646e-05</flt>
+<flt>1.0463994e-04</flt> <flt>1.7830132e-05</flt> <flt>1.0481954e-04</flt>
+<flt>2.1321879e-05</flt> <flt>1.0619746e-04</flt> <flt>1.7557276e-05</flt>
+<flt>1.0636834e-04</flt> <flt>1.5567802e-05</flt> <flt>1.0640668e-04</flt>
+<flt>1.5132377e-05</flt> <flt>1.0872415e-04</flt> <flt>1.3908604e-05</flt>
+<flt>1.0652855e-04</flt> <flt>1.3864861e-05</flt> <flt>1.0658499e-04</flt>
+<flt>1.2923585e-05</flt> <flt>1.0663607e-04</flt> <flt>1.1820710e-05</flt>
+<flt>1.0667945e-04</flt> <flt>1.0815610e-05</flt> <flt>1.0673463e-04</flt>
+<flt>9.7301699e-06</flt> <flt>1.0098440e-04</flt> <flt>1.7677180e-05</flt>
+<flt>1.2071924e-04</flt> <flt>4.6235418e-05</flt> <flt>9.9851299e-05</flt>
+<flt>1.4320012e-05</flt> <flt>1.0724942e-04</flt> <flt>9.1800623e-06</flt>
+<flt>-3.9059727e-04</flt> <flt>-1.7443944e-04</flt> <flt>-1.2744690e-04</flt>
+<flt>-2.2331089e-04</flt> <flt>2.2909983e-03</flt> <flt>2.6167763e-05</flt>
+<flt>1.8018249e-03</flt> <flt>7.7239452e-06</flt> <flt>1.5609706e-03</flt>
+<flt>2.5784954e-06</flt> <flt>1.4118979e-03</flt> <flt>1.6587797e-05</flt>
+<flt>1.3028883e-03</flt> <flt>1.3730849e-05</flt> <flt>1.2029306e-03</flt>
+<flt>1.6255620e-05</flt> <flt>1.0943611e-03</flt> <flt>1.7136419e-05</flt>
+<flt>1.0574442e-03</flt> <flt>2.1333813e-05</flt> <flt>9.6349944e-04</flt>
+<flt>2.0061408e-05</flt> <flt>8.9775753e-04</flt> <flt>2.1241150e-05</flt>
+<flt>7.9850439e-04</flt> <flt>2.2284491e-05</flt> <flt>6.9686108e-04</flt>
+<flt>2.3134180e-05</flt> <flt>5.9906473e-04</flt> <flt>2.4156714e-05</flt>
+<flt>4.1948846e-04</flt> <flt>-3.1100182e-05</flt> <flt>1.3305166e-03</flt>
+<flt>1.5505894e-04</flt> <flt>2.1752398e-03</flt> <flt>1.2295309e-05</flt>
+<flt>9.5762378e-04</flt> <flt>4.0320542e-05</flt> <flt>2.5371032e-04</flt>
+<flt>-4.2103610e-02</flt> <flt>-2.4253304e-02</flt> <flt>-2.2984219e-02</flt>
+<flt>-2.3117872e-02</flt> <flt>2.5935878e-04</flt> <flt>1.1437520e-05</flt>
+<flt>1.0601117e-04</flt> <flt>1.9631932e-05</flt> <flt>1.0511438e-04</flt>
+<flt>1.5616691e-05</flt> <flt>1.0514271e-04</flt> <flt>1.7197713e-05</flt>
+<flt>1.0589529e-04</flt> <flt>1.4179701e-05</flt> <flt>1.0587385e-04</flt>
+<flt>1.2872847e-05</flt> <flt>1.0586454e-04</flt> <flt>1.2541261e-05</flt>
+<flt>1.0713301e-04</flt> <flt>1.1449829e-05</flt> <flt>1.0584317e-04</flt>
+<flt>1.1045014e-05</flt> <flt>1.0583947e-04</flt> <flt>1.0124448e-05</flt>
+<flt>1.0583869e-04</flt> <flt>9.2134137e-06</flt> <flt>1.0583924e-04</flt>
+<flt>8.2747536e-06</flt> <flt>1.0585730e-04</flt> <flt>5.8670895e-06</flt>
+<flt>1.0210738e-04</flt> <flt>1.5086847e-05</flt> <flt>1.1061438e-04</flt>
+<flt>2.4059477e-05</flt> <flt>1.0202885e-04</flt> <flt>1.1617251e-05</flt>
+<flt>1.0945329e-04</flt> <flt>3.9720382e-06</flt> <flt>1.7798161e-04</flt>
+<flt>-2.3250376e-04</flt> <flt>-2.5124498e-04</flt> <flt>-4.0880786e-04</flt>
+<flt>1.9475414e-03</flt> <flt>1.0122393e-05</flt> <flt>1.4869844e-03</flt>
+<flt>5.9783891e-06</flt> <flt>1.3775634e-03</flt> <flt>1.7788663e-05</flt>
+<flt>1.2949049e-03</flt> <flt>1.4109668e-05</flt> <flt>1.2214415e-03</flt>
+<flt>1.5744932e-05</flt> <flt>1.1387227e-03</flt> <flt>1.6392165e-05</flt>
+<flt>1.1098303e-03</flt> <flt>1.8513915e-05</flt> <flt>1.0504647e-03</flt>
+<flt>1.8571184e-05</flt> <flt>9.8727664e-04</flt> <flt>1.9423801e-05</flt>
+<flt>9.1436568e-04</flt> <flt>2.0170115e-05</flt> <flt>8.4106816e-04</flt>
+<flt>2.0770697e-05</flt> <flt>7.7149215e-04</flt> <flt>2.1454397e-05</flt>
+<flt>6.4556948e-04</flt> <flt>-1.6450989e-05</flt> <flt>1.3153720e-03</flt>
+<flt>1.0906555e-04</flt> <flt>1.9278426e-03</flt> <flt>1.5287841e-05</flt>
+<flt>1.0323559e-03</flt> <flt>3.5419575e-05</flt> <flt>5.2910538e-04</flt>
+<flt>-2.9547957e-02</flt> <flt>-1.8487890e-02</flt> <flt>-1.6322290e-02</flt>
+<flt>-1.7046506e-02</flt> <flt>2.6243790e-04</flt> <flt>9.9513531e-06</flt>
+<flt>1.0649493e-04</flt> <flt>1.3733767e-05</flt> <flt>1.0509558e-04</flt>
+<flt>1.4421687e-05</flt> <flt>1.0612883e-04</flt> <flt>1.1362366e-05</flt>
+<flt>1.0610482e-04</flt> <flt>9.6350134e-06</flt> <flt>1.0606945e-04</flt>
+<flt>9.3766602e-06</flt> <flt>1.0723345e-04</flt> <flt>7.9938976e-06</flt>
+<flt>1.0591772e-04</flt> <flt>8.4760498e-06</flt> <flt>1.0585431e-04</flt>
+<flt>7.8205876e-06</flt> <flt>1.0580597e-04</flt> <flt>7.2336331e-06</flt>
+<flt>1.0576763e-04</flt> <flt>6.7467394e-06</flt> <flt>1.0571894e-04</flt>
+<flt>5.5410479e-06</flt> <flt>1.0259624e-04</flt> <flt>1.4379392e-05</flt>
+<flt>1.0774277e-04</flt> <flt>5.8927878e-08</flt> <flt>1.0223457e-04</flt>
+<flt>8.8489971e-06</flt> <flt>1.0952262e-04</flt> <flt>4.7371751e-06</flt>
+<flt>7.5204502e-04</flt> <flt>-1.4012108e-04</flt> <flt>-1.2579393e-04</flt>
+<flt>-5.9770871e-04</flt> <flt>1.6700302e-03</flt> <flt>1.3901326e-05</flt>
+<flt>1.3419323e-03</flt> <flt>1.7504854e-05</flt> <flt>1.2866581e-03</flt>
+<flt>1.5390326e-05</flt> <flt>1.2405924e-03</flt> <flt>1.6615153e-05</flt>
+<flt>1.1812423e-03</flt> <flt>1.7043612e-05</flt> <flt>1.1603617e-03</flt>
+<flt>1.8450997e-05</flt> <flt>1.1341168e-03</flt> <flt>1.8300693e-05</flt>
+<flt>1.0768132e-03</flt> <flt>1.8713567e-05</flt> <flt>1.0307860e-03</flt>
+<flt>1.9072259e-05</flt> <flt>9.8624279e-04</flt> <flt>1.9347865e-05</flt>
+<flt>9.4581765e-04</flt> <flt>1.9511412e-05</flt> <flt>8.7833622e-04</flt>
+<flt>-4.8505003e-07</flt> <flt>1.3062662e-03</flt> <flt>6.6880030e-05</flt>
+<flt>1.6237622e-03</flt> <flt>1.5348797e-05</flt> <flt>1.1064369e-03</flt>
+<flt>2.7217719e-05</flt> <flt>8.1580404e-04</flt> <flt>-1.6552527e-02</flt>
+<flt>-1.2395932e-02</flt> <flt>-9.1651970e-03</flt> <flt>-1.0833403e-02</flt>
+<flt>2.3833269e-04</flt> <flt>-4.9429797e-05</flt> <flt>1.0532506e-04</flt>
+<flt>1.1909575e-05</flt> <flt>1.0573415e-04</flt> <flt>9.6642792e-06</flt>
+<flt>1.0589735e-04</flt> <flt>5.9274525e-06</flt> <flt>1.0589059e-04</flt>
+<flt>5.4136968e-06</flt> <flt>1.0762254e-04</flt> <flt>5.9028032e-06</flt>
+<flt>1.0573587e-04</flt> <flt>5.9505350e-06</flt> <flt>1.0565386e-04</flt>
+<flt>6.2369470e-06</flt> <flt>1.0559515e-04</flt> <flt>6.2906569e-06</flt>
+<flt>1.0555120e-04</flt> <flt>6.4730358e-06</flt> <flt>1.0547048e-04</flt>
+<flt>7.8961001e-06</flt> <flt>1.0596090e-04</flt> <flt>1.7115164e-05</flt>
+<flt>1.0666679e-04</flt> <flt>-5.1948315e-06</flt> <flt>1.0036161e-04</flt>
+<flt>5.5757031e-06</flt> <flt>1.0732197e-04</flt> <flt>9.8818276e-06</flt>
+<flt>4.6378690e-04</flt> <flt>1.6289507e-04</flt> <flt>1.8816747e-04</flt>
+<flt>-7.8865919e-04</flt> <flt>1.4870959e-03</flt> <flt>1.7652836e-05</flt>
+<flt>1.2917309e-03</flt> <flt>1.4045979e-05</flt> <flt>1.2776164e-03</flt>
+<flt>1.5337541e-05</flt> <flt>1.2410837e-03</flt> <flt>1.5773230e-05</flt>
+<flt>1.2273411e-03</flt> <flt>1.8384890e-05</flt> <flt>1.2363739e-03</flt>
+<flt>1.6922469e-05</flt> <flt>1.1806894e-03</flt> <flt>1.7228410e-05</flt>
+<flt>1.1605120e-03</flt> <flt>1.7468058e-05</flt> <flt>1.1429421e-03</flt>
+<flt>1.7637531e-05</flt> <flt>1.1295791e-03</flt> <flt>1.7581419e-05</flt>
+<flt>1.1181748e-03</flt> <flt>2.1591639e-05</flt> <flt>1.3109586e-03</flt>
+<flt>3.6903172e-05</flt> <flt>1.4467111e-03</flt> <flt>9.8357773e-06</flt>
+<flt>1.1953269e-03</flt> <flt>1.3777080e-05</flt> <flt>1.1079666e-03</flt>
+<flt>-8.5600288e-03</flt> <flt>-6.5307317e-03</flt> <flt>-2.2861305e-03</flt>
+<flt>-3.5390186e-03</flt> <flt>2.0875489e-04</flt> <flt>1.0945936e-04</flt>
+<flt>1.0550151e-04</flt> <flt>1.2051746e-05</flt> <flt>1.0472077e-04</flt>
+<flt>1.7314935e-05</flt> <flt>1.0460024e-04</flt> <flt>1.8109023e-05</flt>
+<flt>1.0680208e-04</flt> <flt>1.0662507e-05</flt> <flt>1.0445058e-04</flt>
+<flt>1.5245555e-05</flt> <flt>1.0445077e-04</flt> <flt>1.2648138e-05</flt>
+<flt>1.0445103e-04</flt> <flt>1.0855557e-05</flt> <flt>1.0444441e-04</flt>
+<flt>9.7521381e-06</flt> <flt>1.0441744e-04</flt> <flt>7.9326025e-06</flt>
+<flt>1.1160129e-04</flt> <flt>1.0717297e-05</flt> <flt>1.0360941e-04</flt>
+<flt>1.4515271e-05</flt> <flt>9.7745859e-05</flt> <flt>1.6994863e-05</flt>
+<flt>1.0532917e-04</flt> <flt>5.3074189e-06</flt> <flt>4.8415473e-04</flt>
+<flt>-6.5537959e-04</flt> <flt>-3.9591763e-04</flt> <flt>-5.5608631e-04</flt>
+<flt>1.5601130e-03</flt> <flt>1.5261651e-05</flt> <flt>1.3339094e-03</flt>
+<flt>1.6910921e-05</flt> <flt>1.3248246e-03</flt> <flt>1.7378283e-05</flt>
+<flt>1.3191423e-03</flt> <flt>1.6766750e-05</flt> <flt>1.3540343e-03</flt>
+<flt>1.8709854e-05</flt> <flt>1.3049412e-03</flt> <flt>1.9072435e-05</flt>
+<flt>1.3068457e-03</flt> <flt>1.9306604e-05</flt> <flt>1.3132899e-03</flt>
+<flt>1.9448964e-05</flt> <flt>1.3241492e-03</flt> <flt>1.9367912e-05</flt>
+<flt>1.3596756e-03</flt> <flt>1.0674670e-05</flt> <flt>1.3113595e-03</flt>
+<flt>2.3835300e-05</flt> <flt>1.3147643e-03</flt> <flt>2.1316968e-05</flt>
+<flt>1.3071718e-03</flt> <flt>1.8346378e-05</flt> <flt>1.3936712e-03</flt>
+<flt>-9.6228941e-04</flt> <flt>-1.6438295e-03</flt> <flt>3.5932305e-03</flt>
+<flt>5.5670836e-03</flt> <flt>2.6007626e-04</flt> <flt>3.8374578e-05</flt>
+<flt>1.0591264e-04</flt> <flt>1.4398949e-05</flt> <flt>1.0586042e-04</flt>
+<flt>1.4731821e-05</flt> <flt>1.0710418e-04</flt> <flt>9.2992423e-06</flt>
+<flt>1.0574492e-04</flt> <flt>1.3547997e-05</flt> <flt>1.0572490e-04</flt>
+<flt>1.1991193e-05</flt> <flt>1.0571222e-04</flt> <flt>1.0793232e-05</flt>
+<flt>1.0569838e-04</flt> <flt>1.0190188e-05</flt> <flt>1.0565648e-04</flt>
+<flt>1.0072878e-05</flt> <flt>1.0297247e-04</flt> <flt>1.3877632e-05</flt>
+<flt>1.0820364e-04</flt> <flt>9.0704022e-06</flt> <flt>1.0198999e-04</flt>
+<flt>1.4410497e-05</flt> <flt>1.0925313e-04</flt> <flt>1.0087010e-05</flt>
+<flt>3.0725322e-04</flt> <flt>-2.8731278e-04</flt> <flt>-1.0272171e-04</flt>
+<flt>-4.4622407e-04</flt> <flt>1.5870548e-03</flt> <flt>1.4332409e-05</flt>
+<flt>1.4023526e-03</flt> <flt>1.4723067e-05</flt> <flt>1.4063124e-03</flt>
+<flt>1.5618385e-05</flt> <flt>1.4609839e-03</flt> <flt>1.6138402e-05</flt>
+<flt>1.4280569e-03</flt> <flt>1.6604514e-05</flt> <flt>1.4521876e-03</flt>
+<flt>1.6896553e-05</flt> <flt>1.4823687e-03</flt> <flt>1.7072090e-05</flt>
+<flt>1.5176724e-03</flt> <flt>1.6969413e-05</flt> <flt>1.6053609e-03</flt>
+<flt>3.4529482e-05</flt> <flt>1.3096095e-03</flt> <flt>-2.4994678e-06</flt>
+<flt>1.2049337e-03</flt> <flt>1.4386293e-05</flt> <flt>1.4171786e-03</flt>
+<flt>3.9658320e-06</flt> <flt>1.6882564e-03</flt> <flt>5.2914651e-03</flt>
+<flt>3.6586521e-03</flt> <flt>9.9973492e-03</flt> <flt>1.3234794e-02</flt>
+<flt>2.6320807e-04</flt> <flt>1.4530840e-05</flt> <flt>1.0596350e-04</flt>
+<flt>1.2909814e-05</flt> <flt>1.0719251e-04</flt> <flt>1.0411949e-05</flt>
+<flt>1.0590779e-04</flt> <flt>1.1953099e-05</flt> <flt>1.0589075e-04</flt>
+<flt>1.1054380e-05</flt> <flt>1.0588000e-04</flt> <flt>1.0372794e-05</flt>
+<flt>1.0586841e-04</flt> <flt>1.0195405e-05</flt> <flt>1.0582541e-04</flt>
+<flt>1.1066387e-05</flt> <flt>1.0237116e-04</flt> <flt>1.6256508e-05</flt>
+<flt>1.0909377e-04</flt> <flt>1.2577598e-05</flt> <flt>1.0222832e-04</flt>
+<flt>1.2436080e-05</flt> <flt>1.0937833e-04</flt> <flt>1.2057800e-05</flt>
+<flt>6.5760879e-05</flt> <flt>-1.6800683e-04</flt> <flt>3.4873005e-06</flt>
+<flt>-3.9599454e-04</flt> <flt>1.6692040e-03</flt> <flt>1.2988170e-05</flt>
+<flt>1.5068451e-03</flt> <flt>1.4212228e-05</flt> <flt>1.5339304e-03</flt>
+<flt>1.3799729e-05</flt> <flt>1.5759601e-03</flt> <flt>1.4393214e-05</flt>
+<flt>1.6176088e-03</flt> <flt>1.4821951e-05</flt> <flt>1.6662641e-03</flt>
+<flt>1.5107006e-05</flt> <flt>1.7226396e-03</flt> <flt>1.5028935e-05</flt>
+<flt>1.8634613e-03</flt> <flt>4.9112952e-05</flt> <flt>1.2812056e-03</flt>
+<flt>-2.5817975e-05</flt> <flt>1.0823163e-03</flt> <flt>1.1732947e-05</flt>
+<flt>1.5521731e-03</flt> <flt>-6.7236235e-06</flt> <flt>2.0005421e-03</flt>
+<flt>1.1927727e-02</flt> <flt>9.7167981e-03</flt> <flt>1.6901675e-02</flt>
+<flt>1.9403779e-02</flt> <flt>2.6331436e-04</flt> <flt>1.2642980e-05</flt>
+<flt>1.0719846e-04</flt> <flt>1.0998146e-05</flt> <flt>1.0592525e-04</flt>
+<flt>1.1609484e-05</flt> <flt>1.0591070e-04</flt> <flt>1.0820138e-05</flt>
+<flt>1.0590123e-04</flt> <flt>1.0258431e-05</flt> <flt>1.0589030e-04</flt>
+<flt>1.0202427e-05</flt> <flt>1.0584617e-04</flt> <flt>1.1337059e-05</flt>
+<flt>1.0235778e-04</flt> <flt>1.6847553e-05</flt> <flt>1.0923147e-04</flt>
+<flt>1.3788321e-05</flt> <flt>1.0222985e-04</flt> <flt>1.2061293e-05</flt>
+<flt>1.0936452e-04</flt> <flt>1.2504583e-05</flt> <flt>1.2038447e-05</flt>
+<flt>-1.6822333e-04</flt> <flt>1.8361311e-05</flt> <flt>-3.6869382e-04</flt>
+<flt>1.6562843e-03</flt> <flt>1.3939382e-05</flt> <flt>1.5521596e-03</flt>
+<flt>1.3243350e-05</flt> <flt>1.6246914e-03</flt> <flt>1.3856097e-05</flt>
+<flt>1.6739033e-03</flt> <flt>1.4325264e-05</flt> <flt>1.7294836e-03</flt>
+<flt>1.4653365e-05</flt> <flt>1.7931691e-03</flt> <flt>1.4606864e-05</flt>
+<flt>1.9526190e-03</flt> <flt>5.2530884e-05</flt> <flt>1.2710540e-03</flt>
+<flt>-3.2398466e-05</flt> <flt>1.0410058e-03</flt> <flt>1.1401776e-05</flt>
+<flt>1.5949111e-03</flt> <flt>-1.0085043e-05</flt> <flt>2.1099434e-03</flt>
+<flt>1.3931305e-02</flt> <flt>1.2508803e-02</flt> <flt>1.9516869e-02</flt>
+<flt>2.1087564e-02</flt> <flt>3.2222064e-04</flt> <flt>-3.9240728e-06</flt>
+<flt>1.0719197e-04</flt> <flt>1.2872396e-05</flt> <flt>1.0719160e-04</flt>
+<flt>1.2068206e-05</flt> <flt>1.0719338e-04</flt> <flt>1.1569192e-05</flt>
+<flt>1.0719018e-04</flt> <flt>1.1741095e-05</flt> <flt>1.0715458e-04</flt>
+<flt>1.3708605e-05</flt> <flt>1.0662151e-04</flt> <flt>1.8367263e-05</flt>
+<flt>1.1447130e-04</flt> <flt>1.7122797e-05</flt> <flt>9.2995793e-05</flt>
+<flt>1.3323063e-05</flt> <flt>1.1433563e-04</flt> <flt>1.6195431e-05</flt>
+<flt>-1.7795650e-04</flt> <flt>-1.6772935e-04</flt> <flt>1.3157966e-04</flt>
+<flt>-3.4226285e-04</flt> <flt>2.9819184e-03</flt> <flt>1.2845972e-05</flt>
+<flt>1.6614531e-03</flt> <flt>1.3263824e-05</flt> <flt>1.7555470e-03</flt>
+<flt>1.3362343e-05</flt> <flt>1.8610815e-03</flt> <flt>1.3278185e-05</flt>
+<flt>1.9713517e-03</flt> <flt>1.2584733e-05</flt> <flt>2.1962035e-03</flt>
+<flt>7.1563211e-05</flt> <flt>1.3083892e-03</flt> <flt>-6.3861614e-05</flt>
+<flt>9.3149967e-04</flt> <flt>9.7003086e-06</flt> <flt>1.6123878e-03</flt>
+<flt>-1.7034473e-05</flt> <flt>2.3833413e-03</flt> <flt>2.3017897e-02</flt>
+<flt>1.8058372e-02</flt> <flt>2.3074770e-02</flt> <flt>3.0502665e-02</flt>
+<flt>2.6301971e-04</flt> <flt>1.1108291e-05</flt> <flt>1.0594129e-04</flt>
+<flt>1.0868406e-05</flt> <flt>1.0594254e-04</flt> <flt>1.0569001e-05</flt>
+<flt>1.0593735e-04</flt> <flt>1.1018357e-05</flt> <flt>1.0588145e-04</flt>
+<flt>1.3838497e-05</flt> <flt>1.0244946e-04</flt> <flt>1.8159871e-05</flt>
+<flt>1.0954829e-04</flt> <flt>1.7805796e-05</flt> <flt>1.0218559e-04</flt>
+<flt>1.2133422e-05</flt> <flt>1.0921362e-04</flt> <flt>1.6265099e-05</flt>
+<flt>-1.3918140e-04</flt> <flt>-2.2980472e-04</flt> <flt>1.1893088e-04</flt>
+<flt>-2.7323319e-04</flt> <flt>1.8603039e-03</flt> <flt>1.2140448e-05</flt>
+<flt>1.9045216e-03</flt> <flt>1.2611540e-05</flt> <flt>2.0032438e-03</flt>
+<flt>1.2989353e-05</flt> <flt>2.1072950e-03</flt> <flt>1.3042029e-05</flt>
+<flt>2.3502588e-03</flt> <flt>6.8708277e-05</flt> <flt>1.2496842e-03</flt>
+<flt>-6.2785263e-05</flt> <flt>8.6407010e-04</flt> <flt>1.0184846e-05</flt>
+<flt>1.7446037e-03</flt> <flt>-2.4322200e-05</flt> <flt>2.5917409e-03</flt>
+<flt>2.3184682e-02</flt> <flt>2.6709349e-02</flt> <flt>3.0733655e-02</flt>
+<flt>2.9417721e-02</flt> <flt>2.6290941e-04</flt> <flt>7.7758869e-06</flt>
+<flt>1.0596149e-04</flt> <flt>1.1159480e-05</flt> <flt>1.0596147e-04</flt>
+<flt>1.1917067e-05</flt> <flt>1.0589699e-04</flt> <flt>1.6084721e-05</flt>
+<flt>1.0248332e-04</flt> <flt>1.8430575e-05</flt> <flt>1.0968480e-04</flt>
+<flt>1.9454015e-05</flt> <flt>1.0217234e-04</flt> <flt>1.2720316e-05</flt>
+<flt>1.0908443e-04</flt> <flt>1.9711814e-05</flt> <flt>-2.0277030e-04</flt>
+<flt>-2.4600681e-04</flt> <flt>2.2695402e-04</flt> <flt>-2.4889002e-04</flt>
+<flt>2.3418186e-03</flt> <flt>1.1784458e-05</flt> <flt>2.1668980e-03</flt>
+<flt>1.2085057e-05</flt> <flt>2.3050301e-03</flt> <flt>1.1851452e-05</flt>
+<flt>2.6165324e-03</flt> <flt>8.0938247e-05</flt> <flt>1.2477508e-03</flt>
+<flt>-8.4813153e-05</flt> <flt>7.5198086e-04</flt> <flt>9.1562559e-06</flt>
+<flt>1.8217817e-03</flt> <flt>-3.3277116e-05</flt> <flt>2.9142936e-03</flt>
+<flt>2.9856150e-02</flt> <flt>3.4489158e-02</flt> <flt>3.7568701e-02</flt>
+<flt>3.5590039e-02</flt> <flt>2.6289484e-04</flt> <flt>3.8031071e-06</flt>
+<flt>1.0598415e-04</flt> <flt>1.2550506e-05</flt> <flt>1.0591480e-04</flt>
+<flt>1.7815521e-05</flt> <flt>1.0249235e-04</flt> <flt>1.8619024e-05</flt>
+<flt>1.0982482e-04</flt> <flt>2.0903536e-05</flt> <flt>1.0216821e-04</flt>
+<flt>1.3221604e-05</flt> <flt>1.0897015e-04</flt> <flt>2.2541892e-05</flt>
+<flt>-2.6213116e-04</flt> <flt>-2.5284260e-04</flt> <flt>3.3221725e-04</flt>
+<flt>-2.4145184e-04</flt> <flt>2.9652905e-03</flt> <flt>1.1798192e-05</flt>
+<flt>2.5256611e-03</flt> <flt>1.0708440e-05</flt> <flt>2.9502447e-03</flt>
+<flt>9.4025821e-05</flt> <flt>1.2484072e-03</flt> <flt>-1.0818852e-04</flt>
+<flt>6.3539798e-04</flt> <flt>8.2733125e-06</flt> <flt>1.9021516e-03</flt>
+<flt>-4.4716277e-05</flt> <flt>3.3353473e-03</flt> <flt>3.7042637e-02</flt>
+<flt>4.1525052e-02</flt> <flt>4.6764318e-02</flt> <flt>4.2091407e-02</flt>
+<flt>2.6290473e-04</flt> <flt>2.1183549e-06</flt> <flt>1.0593017e-04</flt>
+<flt>1.8271548e-05</flt> <flt>1.0249263e-04</flt> <flt>1.8745660e-05</flt>
+<flt>1.0994262e-04</flt> <flt>2.2094134e-05</flt> <flt>1.0216416e-04</flt>
+<flt>1.3613637e-05</flt> <flt>1.0891092e-04</flt> <flt>2.3531266e-05</flt>
+<flt>-3.1212993e-04</flt> <flt>-2.5102883e-04</flt> <flt>3.9514443e-04</flt>
+<flt>-2.3921054e-04</flt> <flt>3.5949144e-03</flt> <flt>1.0009088e-05</flt>
+<flt>3.3851000e-03</flt> <flt>1.0716694e-04</flt> <flt>1.2527240e-03</flt>
+<flt>-1.3082023e-04</flt> <flt>5.2245443e-04</flt> <flt>7.9556367e-06</flt>
+<flt>1.9892447e-03</flt> <flt>-6.0862430e-05</flt> <flt>3.9123345e-03</flt>
+<flt>4.4171978e-02</flt> <flt>4.7949872e-02</flt> <flt>6.0549351e-02</flt>
+<flt>4.8468206e-02</flt> <flt>2.6229524e-04</flt> <flt>1.4104705e-05</flt>
+<flt>1.0245649e-04</flt> <flt>1.8618903e-05</flt> <flt>1.1004012e-04</flt>
+<flt>2.3604130e-05</flt> <flt>1.0209675e-04</flt> <flt>1.3671252e-05</flt>
+<flt>1.0931043e-04</flt> <flt>1.2416251e-05</flt> <flt>-3.7865994e-04</flt>
+<flt>-2.3611150e-04</flt> <flt>1.4097302e-04</flt> <flt>-2.3528799e-04</flt>
+<flt>5.0037757e-03</flt> <flt>1.3417120e-04</flt> <flt>1.2771416e-03</flt>
+<flt>-1.7177859e-04</flt> <flt>3.1631501e-04</flt> <flt>9.8937158e-06</flt>
+<flt>2.1997590e-03</flt> <flt>-1.1195420e-04</flt> <flt>5.5551918e-03</flt>
+<flt>5.7704527e-02</flt> <flt>6.0550429e-02</flt> <flt>1.0512650e-01</flt>
+<flt>6.0881279e-02</flt> <flt>1.3269846e-04</flt> <flt>1.9515288e-05</flt>
+<flt>8.7564413e-05</flt> <flt>-3.4067375e-05</flt> <flt>8.9551141e-05</flt>
+<flt>6.1966930e-05</flt> <flt>9.3016211e-05</flt> <flt>1.5825710e-04</flt>
+<flt>3.0968609e-03</flt> <flt>2.5639519e-03</flt> <flt>3.1735206e-03</flt>
+<flt>3.3937257e-03</flt> <flt>1.3202863e-03</flt> <flt>2.7665785e-05</flt>
+<flt>1.3492210e-03</flt> <flt>1.4303148e-05</flt> <flt>1.2535144e-03</flt>
+<flt>1.2913233e-05</flt> <flt>1.3019562e-03</flt> <flt>-4.1624275e-03</flt>
+<flt>-2.3246844e-03</flt> <flt>2.3285802e-03</flt> <flt>1.8918779e-03</flt>
+<flt>1.6386270e-04</flt> <flt>1.6563106e-04</flt> <flt>9.5002398e-05</flt>
+<flt>-5.0516221e-05</flt> <flt>1.0870934e-04</flt> <flt>-2.0988631e-04</flt>
+<flt>-7.8901550e-03</flt> <flt>-4.7427112e-03</flt> <flt>-5.2392895e-03</flt>
+<flt>-5.3475764e-03</flt> <flt>2.4205308e-03</flt> <flt>1.4640334e-05</flt>
+<flt>9.3060582e-04</flt> <flt>4.5926591e-05</flt> <flt>1.2908153e-04</flt>
+<flt>-5.4135723e-02</flt> <flt>-2.6816561e-02</flt> <flt>-2.6050177e-02</flt>
+<flt>-2.5609020e-02</flt> <flt>1.2963073e-04</flt> <flt>1.0747530e-05</flt>
+<flt>9.4160028e-05</flt> <flt>1.0720648e-05</flt> <flt>3.6202476e-05</flt>
+<flt>-1.9422380e-04</flt> <flt>2.6073986e-05</flt> <flt>-3.3706147e-04</flt>
+<flt>1.6944502e-03</flt> <flt>-1.9096327e-05</flt> <flt>2.4109622e-03</flt>
+<flt>1.9471449e-02</flt> <flt>2.1421878e-02</flt> <flt>2.6701272e-02</flt>
+<flt>2.5968490e-02</flt> <flt>1.4829222e-04</flt> <flt>-1.5303874e-04</flt>
+<flt>-1.8991736e-03</flt> <flt>-2.1458929e-03</flt> <flt>-4.3816834e-03</flt>
+<flt>-2.1352949e-03</flt> <flt>6.9688696e-03</flt> <flt>6.9979147e-02</flt>
+<flt>7.2996194e-02</flt> <flt>1.4740123e-01</flt> <flt>7.2355246e-02</flt>
+<flt>3.2379385e+00</flt> <flt>1.4392053e+00</flt> <flt>1.6647718e+00</flt>
+<flt>1.5720183e+00</flt> <flt>2.2160846e+00</flt> <flt>1.6796324e+00</flt>
+<flt>1.3233790e+00</flt> <flt>4.5138608e+00</flt> <flt>1.5383422e+00</flt>
+<flt>2.1695762e+00</flt> </cov-mat>
+
+<!-- original indexes from the adjustment -->
+<original-index>
+<ind>4</ind>
+<ind>5</ind>
+<ind>6</ind>
+<ind>7</ind>
+<ind>8</ind>
+<ind>9</ind>
+<ind>10</ind>
+<ind>11</ind>
+<ind>12</ind>
+<ind>13</ind>
+<ind>14</ind>
+<ind>15</ind>
+<ind>16</ind>
+<ind>17</ind>
+<ind>18</ind>
+<ind>19</ind>
+<ind>20</ind>
+<ind>21</ind>
+<ind>22</ind>
+<ind>23</ind>
+<ind>24</ind>
+<ind>25</ind>
+<ind>26</ind>
+<ind>27</ind>
+<ind>28</ind>
+<ind>29</ind>
+<ind>30</ind>
+<ind>31</ind>
+<ind>39</ind>
+<ind>40</ind>
+<ind>2</ind>
+<ind>3</ind>
+<ind>33</ind>
+<ind>34</ind>
+<ind>36</ind>
+<ind>37</ind>
+<ind>1</ind>
+<ind>32</ind>
+<ind>35</ind>
+<ind>38</ind>
+</original-index>
+
+</coordinates>
+
+<observations>
+
+<direction> <from>6001</from> <to>2</to>
+   <obs>382.1494470</obs> <adj>373.8740915</adj> <stdev>2.687</stdev>
+   <qrr>1.781</qrr> <f>10.441</f> <std-residual>62004.018</std-residual>
+   <err-obs>-418114.780</err-obs> <err-adj>-335361.225</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>2</to>
+   <obs>2.364320</obs> <adj>1.359077</adj> <stdev>0.019</stdev>
+   <qrr>0.000</qrr> <f>24.554</f> <std-residual>61262.799</std-residual>
+   <err-obs>-2333.472</err-obs> <err-adj>-1328.229</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>3</to>
+   <obs>382.1651190</obs> <adj>381.6346001</adj> <stdev>2.519</stdev>
+   <qrr>2.653</qrr> <f>16.021</f> <std-residual>3257.259</std-residual>
+   <err-obs>-17998.916</err-obs> <err-adj>-12693.728</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>3</to>
+   <obs>3.861550</obs> <adj>3.856486</adj> <stdev>0.015</stdev>
+   <qrr>0.000</qrr> <f>38.848</f> <std-residual>255.986</std-residual>
+   <err-obs>-8.088</err-obs> <err-adj>-3.025</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>4</to>
+   <obs>382.1780890</obs> <adj>382.4469668</adj> <stdev>1.930</stdev>
+   <qrr>5.276</qrr> <f>35.679</f> <std-residual>1170.529</std-residual>
+   <err-obs>4586.189</err-obs> <err-adj>1897.411</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>4</to>
+   <obs>6.378073</obs> <adj>6.508248</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>42.582</f> <std-residual>6359.883</std-residual>
+   <err-obs>194.200</err-obs> <err-adj>64.025</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>5</to>
+   <obs>382.1683230</obs> <adj>382.7806834</adj> <stdev>1.321</stdev>
+   <qrr>7.254</qrr> <f>55.955</f> <std-residual>2273.618</std-residual>
+   <err-obs>7597.497</err-obs> <err-adj>1473.893</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>5</to>
+   <obs>8.865125</obs> <adj>9.057466</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>44.438</f> <std-residual>9253.459</std-residual>
+   <err-obs>278.238</err-obs> <err-adj>85.897</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>6</to>
+   <obs>382.1805040</obs> <adj>382.5261640</adj> <stdev>1.253</stdev>
+   <qrr>7.431</qrr> <f>58.246</f> <std-residual>1268.026</std-residual>
+   <err-obs>4186.484</err-obs> <err-adj>729.884</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>6</to>
+   <obs>11.375485</obs> <adj>11.636159</adj> <stdev>0.011</stdev>
+   <qrr>0.001</qrr> <f>56.152</f> <std-residual>11601.758</std-residual>
+   <err-obs>322.723</err-obs> <err-adj>62.048</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>7</to>
+   <obs>382.1766820</obs> <adj>382.8282836</adj> <stdev>1.073</stdev>
+   <qrr>7.849</qrr> <f>64.240</f> <std-residual>2325.795</std-residual>
+   <err-obs>7471.419</err-obs> <err-adj>955.403</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>7</to>
+   <obs>14.865412</obs> <adj>14.353774</adj> <stdev>0.013</stdev>
+   <qrr>0.000</qrr> <f>46.323</f> <std-residual>24256.097</std-residual>
+   <err-obs>-718.720</err-obs> <err-adj>-207.082</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>8</to>
+   <obs>382.1712960</obs> <adj>382.7999809</adj> <stdev>1.003</stdev>
+   <qrr>7.994</qrr> <f>66.570</f> <std-residual>2223.543</std-residual>
+   <err-obs>7077.835</err-obs> <err-adj>790.986</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>8</to>
+   <obs>16.354356</obs> <adj>16.616123</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.216</f> <std-residual>12516.065</std-residual>
+   <err-obs>374.024</err-obs> <err-adj>112.257</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>9</to>
+   <obs>382.1733410</obs> <adj>382.8395012</adj> <stdev>0.962</stdev>
+   <qrr>8.074</qrr> <f>67.918</f> <std-residual>2344.459</std-residual>
+   <err-obs>7425.897</err-obs> <err-adj>764.296</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>9</to>
+   <obs>18.224039</obs> <adj>17.740631</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.247</f> <std-residual>23107.910</std-residual>
+   <err-obs>-690.379</err-obs> <err-adj>-206.971</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>10</to>
+   <obs>382.1764680</obs> <adj>382.9712618</adj> <stdev>1.387</stdev>
+   <qrr>7.076</qrr> <f>53.767</f> <std-residual>2987.812</std-residual>
+   <err-obs>10108.681</err-obs> <err-adj>2160.743</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>10</to>
+   <obs>19.761379</obs> <adj>19.999092</adj> <stdev>0.016</stdev>
+   <qrr>0.000</qrr> <f>36.919</f> <std-residual>12254.225</std-residual>
+   <err-obs>394.820</err-obs> <err-adj>157.108</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>11</to>
+   <obs>382.1797600</obs> <adj>382.8857094</adj> <stdev>0.944</stdev>
+   <qrr>8.108</qrr> <f>68.520</f> <std-residual>2479.212</std-residual>
+   <err-obs>7836.034</err-obs> <err-adj>776.540</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>11</to>
+   <obs>21.329253</obs> <adj>21.608540</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.300</f> <std-residual>13344.937</std-residual>
+   <err-obs>398.531</err-obs> <err-adj>119.244</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>12</to>
+   <obs>382.1763090</obs> <adj>382.9342374</adj> <stdev>1.035</stdev>
+   <qrr>7.930</qrr> <f>65.516</f> <std-residual>2691.519</std-residual>
+   <err-obs>8602.195</err-obs> <err-adj>1022.910</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>12</to>
+   <obs>23.852737</obs> <adj>24.137050</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.017</f> <std-residual>13615.242</std-residual>
+   <err-obs>407.507</err-obs> <err-adj>123.194</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>13</to>
+   <obs>382.1762200</obs> <adj>382.9773417</adj> <stdev>1.108</stdev>
+   <qrr>7.771</qrr> <f>63.052</f> <std-residual>2873.758</std-residual>
+   <err-obs>9277.786</err-obs> <err-adj>1266.568</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>13</to>
+   <obs>26.359146</obs> <adj>26.646974</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>44.756</f> <std-residual>13812.151</std-residual>
+   <err-obs>414.256</err-obs> <err-adj>126.428</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>14</to>
+   <obs>382.1753510</obs> <adj>382.9999744</adj> <stdev>1.147</stdev>
+   <qrr>7.684</qrr> <f>61.766</f> <std-residual>2974.762</std-residual>
+   <err-obs>9658.092</err-obs> <err-adj>1411.857</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>14</to>
+   <obs>28.805058</obs> <adj>29.095444</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>44.642</f> <std-residual>13947.494</std-residual>
+   <err-obs>418.694</err-obs> <err-adj>128.308</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>15</to>
+   <obs>382.1755830</obs> <adj>382.9803184</adj> <stdev>1.196</stdev>
+   <qrr>7.569</qrr> <f>60.124</f> <std-residual>2925.077</std-residual>
+   <err-obs>9568.944</err-obs> <err-adj>1521.590</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>15</to>
+   <obs>33.805093</obs> <adj>34.097268</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>44.809</f> <std-residual>14014.849</std-residual>
+   <err-obs>420.159</err-obs> <err-adj>127.984</err-adj>
+   </distance>
+<direction> <from>6001</from> <to>16</to>
+   <obs>382.1719730</obs> <adj>383.1153502</adj> <stdev>1.450</stdev>
+   <qrr>6.898</qrr> <f>51.668</f> <std-residual>3592.003</std-residual>
+   <err-obs>12309.218</err-obs> <err-adj>2875.446</err-adj>
+   </direction>
+<distance> <from>6001</from> <to>16</to>
+   <obs>38.629860</obs> <adj>38.968978</adj> <stdev>0.012</stdev>
+   <qrr>0.000</qrr> <f>50.557</f> <std-residual>15605.713</std-residual>
+   <err-obs>448.845</err-obs> <err-adj>109.727</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>16</to>
+   <obs>178.0807730</obs> <adj>178.2587719</adj> <stdev>2.364</stdev>
+   <qrr>3.409</qrr> <f>21.185</f> <std-residual>964.001</std-residual>
+   <err-obs>4698.732</err-obs> <err-adj>2918.743</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>16</to>
+   <obs>18.868270</obs> <adj>18.794372</adj> <stdev>0.011</stdev>
+   <qrr>0.000</qrr> <f>54.458</f> <std-residual>3320.230</std-residual>
+   <err-obs>-93.236</err-obs> <err-adj>-19.338</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>15</to>
+   <obs>178.0872930</obs> <adj>178.0418257</adj> <stdev>1.842</stdev>
+   <qrr>5.608</qrr> <f>38.605</f> <std-residual>192.004</std-residual>
+   <err-obs>-729.731</err-obs> <err-adj>-275.058</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>15</to>
+   <obs>14.043494</obs> <adj>13.925645</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.194</f> <std-residual>5635.778</std-residual>
+   <err-obs>-168.446</err-obs> <err-adj>-50.596</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>14</to>
+   <obs>178.0842270</obs> <adj>178.2082833</adj> <stdev>2.231</stdev>
+   <qrr>4.023</qrr> <f>25.633</f> <std-residual>618.538</std-residual>
+   <err-obs>2775.600</err-obs> <err-adj>1535.037</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>14</to>
+   <obs>9.043441</obs> <adj>8.934495</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.124</f> <std-residual>5212.840</std-residual>
+   <err-obs>-155.890</err-obs> <err-adj>-46.943</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>13</to>
+   <obs>178.0861680</obs> <adj>178.2396687</adj> <stdev>2.510</stdev>
+   <qrr>2.699</qrr> <f>16.324</f> <std-residual>934.424</std-residual>
+   <err-obs>5119.409</err-obs> <err-adj>3584.402</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>13</to>
+   <obs>6.597553</obs> <adj>6.491574</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.127</f> <std-residual>5070.748</std-residual>
+   <err-obs>-151.637</err-obs> <err-adj>-45.658</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>12</to>
+   <obs>178.0860790</obs> <adj>178.2181842</adj> <stdev>2.767</stdev>
+   <qrr>1.342</qrr> <f>7.754</f> <std-residual>1140.506</std-residual>
+   <err-obs>8861.720</err-obs> <err-adj>7540.668</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>12</to>
+   <obs>4.091138</obs> <adj>3.988068</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.126</f> <std-residual>4931.632</std-residual>
+   <err-obs>-147.478</err-obs> <err-adj>-44.407</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>11</to>
+   <obs>178.1223110</obs> <adj>178.1851039</adj> <stdev>2.955</stdev>
+   <qrr>0.268</qrr> <f>1.502</f> <std-residual>1212.173</std-residual>
+   <err-obs>21060.114</err-obs> <err-adj>20432.185</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>11</to>
+   <obs>1.567656</obs> <adj>1.467612</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.114</f> <std-residual>4787.303</std-residual>
+   <err-obs>-143.176</err-obs> <err-adj>-43.131</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>9</to>
+   <obs>378.1203350</obs> <adj>378.6005097</adj> <stdev>2.806</stdev>
+   <qrr>1.128</qrr> <f>6.479</f> <std-residual>4520.113</std-residual>
+   <err-obs>38294.975</err-obs> <err-adj>33493.228</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>9</to>
+   <obs>2.537606</obs> <adj>2.381502</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.084</f> <std-residual>7471.600</std-residual>
+   <err-obs>-223.509</err-obs> <err-adj>-67.405</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>8</to>
+   <obs>378.1222070</obs> <adj>378.0298432</adj> <stdev>2.626</stdev>
+   <qrr>2.106</qrr> <f>12.476</f> <std-residual>636.520</std-residual>
+   <err-obs>-3947.888</err-obs> <err-adj>-3024.250</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>8</to>
+   <obs>3.407239</obs> <adj>3.499493</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.099</f> <std-residual>4415.026</std-residual>
+   <err-obs>132.058</err-obs> <err-adj>39.804</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>7</to>
+   <obs>378.0937800</obs> <adj>378.2091781</adj> <stdev>1.896</stdev>
+   <qrr>5.407</qrr> <f>36.816</f> <std-residual>496.270</std-residual>
+   <err-obs>1920.790</err-obs> <err-adj>766.809</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>7</to>
+   <obs>5.896212</obs> <adj>5.742263</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.487</f> <std-residual>7345.356</std-residual>
+   <err-obs>-219.042</err-obs> <err-adj>-65.093</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>6</to>
+   <obs>378.0877360</obs> <adj>378.2628050</adj> <stdev>1.550</stdev>
+   <qrr>6.596</qrr> <f>48.322</f> <std-residual>681.637</std-residual>
+   <err-obs>2388.581</err-obs> <err-adj>637.891</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>6</to>
+   <obs>8.386165</obs> <adj>8.436766</adj> <stdev>0.012</stdev>
+   <qrr>0.000</qrr> <f>52.184</f> <std-residual>2304.593</std-residual>
+   <err-obs>65.600</err-obs> <err-adj>14.999</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>5</to>
+   <obs>378.0991220</obs> <adj>377.8236173</adj> <stdev>1.284</stdev>
+   <qrr>7.350</qrr> <f>57.188</f> <std-residual>1016.184</std-residual>
+   <err-obs>-3373.325</err-obs> <err-adj>-618.278</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>5</to>
+   <obs>10.896478</obs> <adj>10.957893</adj> <stdev>0.013</stdev>
+   <qrr>0.000</qrr> <f>48.275</f> <std-residual>2870.391</std-residual>
+   <err-obs>83.848</err-obs> <err-adj>22.433</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>4</to>
+   <obs>378.0914210</obs> <adj>377.8958490</adj> <stdev>1.267</stdev>
+   <qrr>7.395</qrr> <f>57.777</f> <std-residual>719.157</std-residual>
+   <err-obs>-2380.034</err-obs> <err-adj>-424.313</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>4</to>
+   <obs>13.383529</obs> <adj>13.430249</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.213</f> <std-residual>2233.919</std-residual>
+   <err-obs>66.759</err-obs> <err-adj>20.038</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>3</to>
+   <obs>378.0946460</obs> <adj>377.7210770</adj> <stdev>1.244</stdev>
+   <qrr>7.451</qrr> <f>58.517</f> <std-residual>1368.536</std-residual>
+   <err-obs>-4512.158</err-obs> <err-adj>-776.468</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>3</to>
+   <obs>15.900114</obs> <adj>15.891868</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.604</f> <std-residual>393.089</std-residual>
+   <err-obs>-11.711</err-obs> <err-adj>-3.465</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>2</to>
+   <obs>378.0941680</obs> <adj>377.7474337</adj> <stdev>1.239</stdev>
+   <qrr>7.466</qrr> <f>58.716</f> <std-residual>1268.969</std-residual>
+   <err-obs>-4179.728</err-obs> <err-adj>-712.385</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>2</to>
+   <obs>18.397249</obs> <adj>17.780716</adj> <stdev>0.012</stdev>
+   <qrr>0.000</qrr> <f>50.680</f> <std-residual>28349.168</std-residual>
+   <err-obs>-814.712</err-obs> <err-adj>-198.179</err-adj>
+   </distance>
+<direction> <from>6010</from> <to>1</to>
+   <obs>378.0901230</obs> <adj>377.9982384</adj> <stdev>1.611</stdev>
+   <qrr>6.406</qrr> <f>46.310</f> <std-residual>363.046</std-residual>
+   <err-obs>-1290.995</err-obs> <err-adj>-372.149</err-adj>
+   </direction>
+<distance> <from>6010</from> <to>1</to>
+   <obs>19.761401</obs> <adj>19.835482</adj> <stdev>0.011</stdev>
+   <qrr>0.000</qrr> <f>54.458</f> <std-residual>3328.474</std-residual>
+   <err-obs>93.468</err-obs> <err-adj>19.386</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>1</to>
+   <obs>195.6299140</obs> <adj>195.7086331</adj> <stdev>1.244</stdev>
+   <qrr>7.453</qrr> <f>58.540</f> <std-residual>288.347</std-residual>
+   <err-obs>950.589</err-obs> <err-adj>163.398</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>1</to>
+   <obs>38.629391</obs> <adj>38.709288</adj> <stdev>0.012</stdev>
+   <qrr>0.000</qrr> <f>51.844</f> <std-residual>3646.564</std-residual>
+   <err-obs>104.020</err-obs> <err-adj>24.122</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>2</to>
+   <obs>195.6320670</obs> <adj>195.6073770</adj> <stdev>1.116</stdev>
+   <qrr>7.754</qrr> <f>62.785</f> <std-residual>88.669</std-residual>
+   <err-obs>-286.591</err-obs> <err-adj>-39.692</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>2</to>
+   <obs>37.265248</obs> <adj>36.652946</adj> <stdev>0.012</stdev>
+   <qrr>0.000</qrr> <f>50.980</f> <std-residual>28099.800</std-residual>
+   <err-obs>-805.974</err-obs> <err-adj>-193.672</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>3</to>
+   <obs>195.6319360</obs> <adj>195.5831639</adj> <stdev>1.073</stdev>
+   <qrr>7.848</qrr> <f>64.220</f> <std-residual>174.100</std-residual>
+   <err-obs>-559.328</err-obs> <err-adj>-71.607</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>3</to>
+   <obs>34.768085</obs> <adj>34.763417</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.665</f> <std-residual>222.404</std-residual>
+   <err-obs>-6.623</err-obs> <err-adj>-1.955</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>4</to>
+   <obs>195.6297980</obs> <adj>195.6639581</adj> <stdev>1.031</stdev>
+   <qrr>7.937</qrr> <f>65.640</f> <std-residual>121.249</std-residual>
+   <err-obs>387.329</err-obs> <err-adj>45.728</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>4</to>
+   <obs>32.251563</obs> <adj>32.302157</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.265</f> <std-residual>2418.135</std-residual>
+   <err-obs>72.235</err-obs> <err-adj>21.641</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>5</to>
+   <obs>195.6320280</obs> <adj>195.6401843</adj> <stdev>0.983</stdev>
+   <qrr>8.034</qrr> <f>67.243</f> <std-residual>28.775</std-residual>
+   <err-obs>91.367</err-obs> <err-adj>9.804</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>5</to>
+   <obs>29.764490</obs> <adj>29.828806</adj> <stdev>0.013</stdev>
+   <qrr>0.000</qrr> <f>48.696</f> <std-residual>2997.135</std-residual>
+   <err-obs>87.292</err-obs> <err-adj>22.976</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>6</to>
+   <obs>195.6274630</obs> <adj>195.7840918</adj> <stdev>0.962</stdev>
+   <qrr>8.075</qrr> <f>67.933</f> <std-residual>551.204</std-residual>
+   <err-obs>1745.802</err-obs> <err-adj>179.514</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>6</to>
+   <obs>27.254143</obs> <adj>27.308551</adj> <stdev>0.012</stdev>
+   <qrr>0.000</qrr> <f>51.530</f> <std-residual>2488.121</std-residual>
+   <err-obs>71.115</err-obs> <err-adj>16.707</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>7</to>
+   <obs>195.6281960</obs> <adj>195.7660869</adj> <stdev>0.933</stdev>
+   <qrr>8.129</qrr> <f>68.893</f> <std-residual>483.631</std-residual>
+   <err-obs>1526.634</err-obs> <err-adj>147.724</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>7</to>
+   <obs>24.764189</obs> <adj>24.612742</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.356</f> <std-residual>7233.287</std-residual>
+   <err-obs>-215.919</err-obs> <err-adj>-64.472</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>8</to>
+   <obs>195.6315120</obs> <adj>195.6983975</adj> <stdev>0.917</stdev>
+   <qrr>8.158</qrr> <f>69.419</f> <std-residual>234.170</std-residual>
+   <err-obs>737.859</err-obs> <err-adj>69.004</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>8</to>
+   <obs>22.275292</obs> <adj>22.368051</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.141</f> <std-residual>4437.762</std-residual>
+   <err-obs>132.694</err-obs> <err-adj>39.935</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>9</to>
+   <obs>195.6300420</obs> <adj>195.7883680</adj> <stdev>0.896</stdev>
+   <qrr>8.197</qrr> <f>70.122</f> <std-residual>553.014</std-residual>
+   <err-obs>1738.448</err-obs> <err-adj>155.188</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>9</to>
+   <obs>21.405614</obs> <adj>21.250468</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.149</f> <std-residual>7421.981</std-residual>
+   <err-obs>-221.912</err-obs> <err-adj>-66.766</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>10</to>
+   <obs>195.6261930</obs> <adj>195.5470310</adj> <stdev>1.423</stdev>
+   <qrr>6.974</qrr> <f>52.558</f> <std-residual>299.755</std-residual>
+   <err-obs>-1021.547</err-obs> <err-adj>-229.926</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>10</to>
+   <obs>18.868261</obs> <adj>18.996358</adj> <stdev>0.015</stdev>
+   <qrr>0.000</qrr> <f>38.397</f> <std-residual>6504.704</std-residual>
+   <err-obs>206.441</err-obs> <err-adj>78.344</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>11</to>
+   <obs>195.6216390</obs> <adj>195.6641862</adj> <stdev>0.930</stdev>
+   <qrr>8.135</qrr> <f>69.003</f> <std-residual>149.171</std-residual>
+   <err-obs>470.698</err-obs> <err-adj>45.226</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>11</to>
+   <obs>17.300393</obs> <adj>17.397213</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.191</f> <std-residual>4630.185</std-residual>
+   <err-obs>138.393</err-obs> <err-adj>41.573</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>12</to>
+   <obs>195.6238190</obs> <adj>195.6097051</adj> <stdev>1.230</stdev>
+   <qrr>7.486</qrr> <f>58.992</f> <std-residual>51.583</std-residual>
+   <err-obs>-169.673</err-obs> <err-adj>-28.533</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>12</to>
+   <obs>14.776879</obs> <adj>14.873457</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.143</f> <std-residual>4620.372</std-residual>
+   <err-obs>138.152</err-obs> <err-adj>41.574</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>13</to>
+   <obs>195.6219910</obs> <adj>195.5254395</adj> <stdev>1.689</stdev>
+   <qrr>6.148</qrr> <f>43.706</f> <std-residual>389.402</std-residual>
+   <err-obs>-1413.445</err-obs> <err-adj>-447.930</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>13</to>
+   <obs>12.270486</obs> <adj>12.365302</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.001</f> <std-residual>4541.170</std-residual>
+   <err-obs>135.936</err-obs> <err-adj>41.119</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>14</to>
+   <obs>195.6215130</obs> <adj>195.4376994</adj> <stdev>2.177</stdev>
+   <qrr>4.260</qrr> <f>27.426</f> <std-residual>890.604</std-residual>
+   <err-obs>-3883.600</err-obs> <err-adj>-2045.464</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>14</to>
+   <obs>9.824633</obs> <adj>9.915948</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>44.769</f> <std-residual>4381.499</std-residual>
+   <err-obs>131.397</err-obs> <err-adj>40.082</err-adj>
+   </distance>
+<direction> <from>6016</from> <to>15</to>
+   <obs>195.6057090</obs> <adj>195.3694981</adj> <stdev>2.846</stdev>
+   <qrr>0.900</qrr> <f>5.131</f> <std-residual>2489.922</std-residual>
+   <err-obs>-23621.859</err-obs> <err-adj>-21259.750</err-adj>
+   </direction>
+<distance> <from>6016</from> <to>15</to>
+   <obs>4.824555</obs> <adj>4.896104</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>44.075</f> <std-residual>3452.287</std-residual>
+   <err-obs>104.110</err-obs> <err-adj>32.561</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>1</to>
+   <obs>217.2818480</obs> <adj>217.4450515</adj> <stdev>2.571</stdev>
+   <qrr>2.388</qrr> <f>14.284</f> <std-residual>1056.225</std-residual>
+   <err-obs>6152.140</err-obs> <err-adj>4520.105</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>1</to>
+   <obs>10.593329</obs> <adj>10.650661</adj> <stdev>0.012</stdev>
+   <qrr>0.000</qrr> <f>51.626</f> <std-residual>2620.258</std-residual>
+   <err-obs>74.846</err-obs> <err-adj>17.514</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>2</to>
+   <obs>216.1207320</obs> <adj>215.1147698</adj> <stdev>1.769</stdev>
+   <qrr>5.872</qrr> <f>41.042</f> <std-residual>4151.493</std-residual>
+   <err-obs>-15419.474</err-obs> <err-adj>-5359.851</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>2</to>
+   <obs>9.241203</obs> <adj>8.625344</adj> <stdev>0.013</stdev>
+   <qrr>0.000</qrr> <f>48.245</f> <std-residual>28790.169</std-residual>
+   <err-obs>-841.176</err-obs> <err-adj>-225.317</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>3</to>
+   <obs>212.7768930</obs> <adj>212.1964251</adj> <stdev>2.030</stdev>
+   <qrr>4.881</qrr> <f>32.345</f> <std-residual>2627.514</std-residual>
+   <err-obs>-10704.201</err-obs> <err-adj>-4899.522</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>3</to>
+   <obs>6.778827</obs> <adj>6.768625</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>44.506</f> <std-residual>490.543</std-residual>
+   <err-obs>-14.742</err-obs> <err-adj>-4.540</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>4</to>
+   <obs>205.5732030</obs> <adj>205.5068217</adj> <stdev>2.492</stdev>
+   <qrr>2.788</qrr> <f>16.921</f> <std-residual>397.554</std-residual>
+   <err-obs>-2142.831</err-obs> <err-adj>-1479.017</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>4</to>
+   <obs>4.338148</obs> <adj>4.374141</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>43.678</f> <std-residual>1742.346</std-residual>
+   <err-obs>52.715</err-obs> <err-adj>16.722</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>5</to>
+   <obs>182.2734630</obs> <adj>182.4630369</adj> <stdev>2.811</stdev>
+   <qrr>1.097</qrr> <f>6.293</f> <std-residual>1809.897</std-residual>
+   <err-obs>15551.480</err-obs> <err-adj>13655.741</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>5</to>
+   <obs>2.107880</obs> <adj>2.163813</adj> <stdev>0.015</stdev>
+   <qrr>0.000</qrr> <f>38.507</f> <std-residual>2837.160</std-residual>
+   <err-obs>89.945</err-obs> <err-adj>34.011</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>6</to>
+   <obs>88.2876300</obs> <adj>88.8361476</adj> <stdev>2.811</stdev>
+   <qrr>1.098</qrr> <f>6.296</f> <std-residual>5235.445</std-residual>
+   <err-obs>44973.753</err-obs> <err-adj>39488.577</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>6</to>
+   <obs>1.576582</obs> <adj>1.530153</adj> <stdev>0.018</stdev>
+   <qrr>0.000</qrr> <f>29.071</f> <std-residual>2634.568</std-residual>
+   <err-obs>-93.435</err-obs> <err-adj>-47.006</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>7</to>
+   <obs>49.0587550</obs> <adj>47.8065696</adj> <stdev>2.512</stdev>
+   <qrr>2.690</qrr> <f>16.267</f> <std-residual>7634.814</std-residual>
+   <err-obs>-41895.824</err-obs> <err-adj>-29373.970</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>7</to>
+   <obs>3.603877</obs> <adj>3.756231</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>42.473</f> <std-residual>7450.426</std-residual>
+   <err-obs>227.713</err-obs> <err-adj>75.359</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>8</to>
+   <obs>39.3337280</obs> <adj>39.6622471</adj> <stdev>1.791</stdev>
+   <qrr>5.791</qrr> <f>40.292</f> <std-residual>1365.111</std-residual>
+   <err-obs>5105.256</err-obs> <err-adj>1820.064</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>8</to>
+   <obs>5.989663</obs> <adj>5.916238</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>44.990</f> <std-residual>3516.961</std-residual>
+   <err-obs>-105.286</err-obs> <err-adj>-31.861</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>9</to>
+   <obs>37.5584350</obs> <adj>37.1918233</adj> <stdev>1.528</stdev>
+   <qrr>6.665</qrr> <f>49.062</f> <std-residual>1420.081</std-residual>
+   <err-obs>-4950.651</err-obs> <err-adj>-1284.534</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>9</to>
+   <obs>6.840834</obs> <adj>7.006235</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.411</f> <std-residual>7896.413</std-residual>
+   <err-obs>235.614</err-obs> <err-adj>70.212</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>10</to>
+   <obs>34.2350530</obs> <adj>34.7610528</adj> <stdev>2.455</stdev>
+   <qrr>2.975</qrr> <f>18.180</f> <std-residual>3049.660</std-residual>
+   <err-obs>15913.286</err-obs> <err-adj>10653.288</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>10</to>
+   <obs>9.343631</obs> <adj>9.235843</adj> <stdev>0.016</stdev>
+   <qrr>0.000</qrr> <f>36.798</f> <std-residual>5563.601</std-residual>
+   <err-obs>-179.483</err-obs> <err-adj>-71.695</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>11</to>
+   <obs>32.9493100</obs> <adj>33.1732814</adj> <stdev>1.128</stdev>
+   <qrr>7.728</qrr> <f>62.411</f> <std-residual>805.656</std-residual>
+   <err-obs>2608.249</err-obs> <err-adj>368.535</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>11</to>
+   <obs>10.898200</obs> <adj>10.816004</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.669</f> <std-residual>3916.280</std-residual>
+   <err-obs>-116.621</err-obs> <err-adj>-34.424</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>12</to>
+   <obs>31.4938240</obs> <adj>31.7433249</adj> <stdev>1.262</stdev>
+   <qrr>7.408</qrr> <f>57.945</f> <std-residual>916.675</std-residual>
+   <err-obs>3031.109</err-obs> <err-adj>536.100</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>12</to>
+   <obs>13.406551</obs> <adj>13.322008</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.451</f> <std-residual>4034.898</std-residual>
+   <err-obs>-120.356</err-obs> <err-adj>-35.813</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>13</to>
+   <obs>30.5069110</obs> <adj>30.7775025</adj> <stdev>1.346</stdev>
+   <qrr>7.189</qrr> <f>55.147</f> <std-residual>1009.182</std-residual>
+   <err-obs>3387.404</err-obs> <err-adj>681.490</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>13</to>
+   <obs>15.902683</obs> <adj>15.815820</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.325</f> <std-residual>4149.684</std-residual>
+   <err-obs>-123.902</err-obs> <err-adj>-37.039</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>14</to>
+   <obs>29.8014790</obs> <adj>30.0695525</adj> <stdev>1.354</stdev>
+   <qrr>7.166</qrr> <f>54.859</f> <std-residual>1001.412</std-residual>
+   <err-obs>3366.774</err-obs> <err-adj>686.040</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>14</to>
+   <obs>18.341135</obs> <adj>18.251424</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.281</f> <std-residual>4287.207</std-residual>
+   <err-obs>-128.051</err-obs> <err-adj>-38.340</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>15</to>
+   <obs>28.8220830</obs> <adj>29.0029031</adj> <stdev>1.324</stdev>
+   <qrr>7.247</qrr> <f>55.872</f> <std-residual>671.668</std-residual>
+   <err-obs>2245.462</err-obs> <err-adj>437.260</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>15</to>
+   <obs>23.331137</obs> <adj>23.230700</adj> <stdev>0.014</stdev>
+   <qrr>0.000</qrr> <f>45.144</f> <std-residual>4804.965</std-residual>
+   <err-obs>-143.670</err-obs> <err-adj>-43.232</err-adj>
+   </distance>
+<direction> <from>5001</from> <to>16</to>
+   <obs>28.2013140</obs> <adj>28.5241515</adj> <stdev>1.709</stdev>
+   <qrr>6.079</qrr> <f>43.031</f> <std-residual>1309.375</std-residual>
+   <err-obs>4779.542</err-obs> <err-adj>1551.167</err-adj>
+   </direction>
+<distance> <from>5001</from> <to>16</to>
+   <obs>28.149463</obs> <adj>28.095998</adj> <stdev>0.012</stdev>
+   <qrr>0.000</qrr> <f>53.160</f> <std-residual>2420.579</std-residual>
+   <err-obs>-68.493</err-obs> <err-adj>-15.027</err-adj>
+   </distance>
+
+</observations>
+
+</gama-local-adjustment>
