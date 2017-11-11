@@ -96,7 +96,9 @@ int main(int argc, char *argv[])
     // Discrete LMS
     DiscreteLms dLms(A,b);
 
-    dLms.solve();
+    dLms.solve(DiscreteLms::reweightLinear);
+
+    //dLms.solve(DiscreteLms::randomSamples);
 
     return 0;
 }

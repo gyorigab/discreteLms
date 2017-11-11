@@ -37,14 +37,15 @@ public:
     int generateRandomSampleSet();
     int generateRandomSample();
 
-    int solve();
+    int solve(void (*rewieghtFunction)(const std::vector<Pair> &, DiscreteLms *));
     int deleteMatVecRows();
     int deleteMatVecRowsSet();
 
     bool exists(unsigned int index);
 
     double cmpMedian(std::vector<Pair> &vsort);
-    int reweightDistribution(const std::vector<Pair> &vsort);
+    static void reweightLinear(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
+    static void randomSamples(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
 
     void initDistribution();
 
