@@ -15,17 +15,10 @@ DiscreteLms::DiscreteLms(Mat *A, Vec *b): m_distribution(A->rows(),100.0)
     m_rows = A->rows();
     m_cols = A->cols();
 
-    //m_K = generateRandomSampleSize();
-    m_K = 1;
+    m_K = generateRandomSampleSize();
 
     m_median = 10e8;
-
-    m_experiments_count = m_rows/2;
-    m_end_experiment = 100;
-    m_max_iter = 100;
-
-    m_max_estimation_diff = 10e-4; // [mm]
-    m_outlieres_count = 0;
+    m_max_iter = 10000;
 }
 
 void DiscreteLms::initDistribution()
@@ -33,58 +26,8 @@ void DiscreteLms::initDistribution()
     m_distribution.assign(m_A->rows(),100.0);
 }
 
-void DiscreteLms::cmpFinalEstimation()
-{
-    bool found = false;
-
-    // hladam stejne dobry odhad ako nejlepsi odhad ale s minimalnym
-    // poctom vylucenych merani
-    for(int i = m_results.size()-1; i >= 0; i--)
-    {
-        for(unsigned int j = 1; j <= m_cols; j++)
-        {
-            // testujem ci nieje nejaky podobny odhad ako vysledny s mensim
-            // poctom odstranenych merani
-            if(abs(m_x(j) - m_results[i](j)) > m_max_estimation_diff)
-            {
-                // pokial som tu tak to znamena ze tento odhad uz nieje spravny
-                // a ulozim do vysledneho odhadu ten predchdzi posledny spravny
-                if( i+1 < m_results.size() )
-                {
-                    m_x = m_results[i+1];
-                    m_sample_set = m_best_sample_sets[i+1];
-                }
-                found = true;
-                break;
-            }
-        }
-        if(found) break;
-    }
-
-    // pokial to nenaslo ani jeden horsi odhad od odhadu
-    // s najlepsim medianom tak to vyzera ze v merani bude max
-    // jedno odlahle meranie
-    if(!found)
-    {
-        m_x = m_results[0];
-        m_sample_set = m_best_sample_sets[0];
-    }
-
-    cout << "\nOdstranene riadky vysledneho odhadu: ";
-
-    for(auto a: m_sample_set)
-    {
-        cout << a << " ";
-    }
-
-    cout << "\nVysledny odhad: \n";
-    cout << m_x;
-}
-
 int DiscreteLms::solve()
 {
-    // TODO pocitat SVD pseudoinverziu (momentalne regularny priklad takze OK)
-
     initDistribution();
 
     for(unsigned int expIter = 0; expIter < m_max_iter; expIter++)
@@ -102,7 +45,7 @@ int DiscreteLms::solve()
         Mat N = trans(m_A_cpy) * m_A_cpy;
         Vec n = trans(m_A_cpy) * m_b_cpy;
 
-        // riesim sustavu x = A^(-1)*b
+        // riesim sustavu x = A^(-1)*b SVD - pseudoinverze
         x = pinv(N) * n;
 
         // pocitam vyrovnane opravy z povodnej sustavy
@@ -141,7 +84,6 @@ int DiscreteLms::solve()
             cout << " << Iterace: "           << expIter
                  << " << Hodnota medianu: "   << median << endl;
         }
-
     }
 
     cout << "\nOdstranene riadky najlepsieho odhadu: ";
@@ -181,8 +123,6 @@ int DiscreteLms::deleteMatVecRows()
 
     for(unsigned int i = 1; i <= m_A->rows(); i++)
     {
-        // INFO Ales tu bola chyba. Nevynuloval som niektore vybrane riadky
-
         // pokial je riadkovy index v zozname na odstranenie
         if(exists(i-1))
         {
@@ -254,7 +194,7 @@ int DiscreteLms::reweightDistribution(const std::vector<Pair> &vsort)
     int index = 0;
 
     // pociatocna zmena pravdepodobnosti rozdelenia
-    double changedDistribution  = 10.0;
+    double changedDistribution  = 50.0;
     // linearny prirastok prirastok
     double diff = changedDistribution/(m_rows/2);
 
@@ -272,7 +212,7 @@ int DiscreteLms::reweightDistribution(const std::vector<Pair> &vsort)
         changedDistribution -= diff;
     }
 
-    changedDistribution = 10.0;
+    changedDistribution = 50.0;
 
     // najmensia oprava ma najvacsi ubytok pravdepodobnosti
     // ze bude odstranena z nahodneho vzoru v dalsom kroku

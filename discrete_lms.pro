@@ -43,7 +43,11 @@ HEADERS +=  matvec/array.h\
             matvec/transvec.h\
             matvec/vecbase.h\
             matvec/vec.h \
-    discretelms.h
+    discretelms.h \
+    networkgenerator.h \
+    lsq.h
 
 SOURCES +=   main.cpp \
-    discretelms.cpp
+    discretelms.cpp \
+    networkgenerator.cpp \
+    lsq.cpp

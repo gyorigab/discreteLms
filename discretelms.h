@@ -73,13 +73,6 @@ private:
     vector<unsigned int> m_sample;
     set<unsigned int> m_sample_set;
 
-    vector<Vec> m_results;
-    vector< set<unsigned int> > m_best_sample_sets;
-
-    unsigned int m_outlieres_count;
-
-    unsigned int m_experiments_count;
-    unsigned int m_end_experiment;
     unsigned int m_max_iter;
 
     double m_max_estimation_diff;
