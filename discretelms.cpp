@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <matvec/pinv.h>
 
-DiscreteLms::DiscreteLms(Mat *A, Vec *b) : m_distribution(A->rows(),1.0/(double)A->rows())
+DiscreteLms::DiscreteLms(Mat *A, Vec *b) : m_distribution(A->rows(),1.0/A->rows())
 {
     m_A = A;
     m_b = b;
@@ -23,7 +23,7 @@ DiscreteLms::DiscreteLms(Mat *A, Vec *b) : m_distribution(A->rows(),1.0/(double)
 
 void DiscreteLms::initDistribution()
 {
-    m_distribution.assign(m_A->rows(),1.0/(double)m_A->rows());
+    m_distribution.assign(m_A->rows(),1.0/m_A->rows());
 }
 
 int DiscreteLms::solve(void (*rewieghtFunction)(const std::vector<Pair> &vsort, DiscreteLms* pdlms ))
@@ -78,8 +78,6 @@ int DiscreteLms::solve(void (*rewieghtFunction)(const std::vector<Pair> &vsort, 
             m_v = v;
 
             m_sample_set = m_deleted_rows_set;
-
-            cout << endl;
 
             cout << " << Iterace: "           << expIter
                  << " << Hodnota medianu: "   << median << endl;
@@ -193,10 +191,48 @@ void DiscreteLms::reweightLinear(const std::vector<Pair> &vsort, DiscreteLms *pd
 {
     int index = 0;
 
+        // pociatocna zmena pravdepodobnosti rozdelenia
+        double changedDistribution  = 0.1;
+        // linearny prirastok prirastok
+        double diff = changedDistribution/(pdlms->m_rows/2);
+
+        // najvacsia oprava ma najvacsi prirastok pravdepodobnosti
+        // ze bude odstranena z nahodneho vzoru v dalsom kroku
+        for(unsigned int i = vsort.size() - 1; i > pdlms->m_rows/2; i--)
+        {
+            index = vsort[i].index - 1;
+
+            if(pdlms->m_distribution[index] < 1.0)
+            {
+                pdlms->m_distribution[index] += changedDistribution;
+            }
+
+            changedDistribution -= diff;
+        }
+
+        changedDistribution = 0.1;
+
+        // najmensia oprava ma najvacsi ubytok pravdepodobnosti
+        // ze bude odstranena z nahodneho vzoru v dalsom kroku
+        for(unsigned int i = 0; i < pdlms->m_rows/2; i++)
+        {
+             index = vsort[i].index - 1;
+
+             if(pdlms->m_distribution[index] > 0.05)
+             {
+                pdlms->m_distribution[index] -= changedDistribution;
+             }
+             changedDistribution -= diff;
+        }
+}
+
+void DiscreteLms::reweightExponential(const std::vector<Pair> &vsort, DiscreteLms *pdlms)
+{
+    int index = 0;
+
     // pociatocna zmena pravdepodobnosti rozdelenia
-    double changedDistribution  = 0.1/(pdlms->m_rows/2);
-    // linearny prirastok prirastok
-    double diff = changedDistribution/(pdlms->m_rows/2);
+    double changedDistribution  = 0.1;
+    double diff = (changedDistribution/2);
 
     // najvacsia oprava ma najvacsi prirastok pravdepodobnosti
     // ze bude odstranena z nahodneho vzoru v dalsom kroku
@@ -210,9 +246,11 @@ void DiscreteLms::reweightLinear(const std::vector<Pair> &vsort, DiscreteLms *pd
         }
 
         changedDistribution -= diff;
+        diff /= 2;
     }
 
-    changedDistribution = 0.1/(pdlms->m_rows/2);
+    changedDistribution = 0.1;
+    diff = (changedDistribution/2);
 
     // najmensia oprava ma najvacsi ubytok pravdepodobnosti
     // ze bude odstranena z nahodneho vzoru v dalsom kroku
@@ -220,27 +258,67 @@ void DiscreteLms::reweightLinear(const std::vector<Pair> &vsort, DiscreteLms *pd
     {
          index = vsort[i].index - 1;
 
-         if(pdlms->m_distribution[index] > 0.0)
+         if(pdlms->m_distribution[index] > 0.05)
          {
             pdlms->m_distribution[index] -= changedDistribution;
          }
          changedDistribution -= diff;
+         diff /= 2;
     }
+}
 
-    double sum = 0.0;
+void DiscreteLms::probabilityGroups(const std::vector<Pair> &vsort, DiscreteLms *pdlms)
+{
+    int index = 0;
 
-    /*cout << "Vahy: ";
-    for(auto a : pdlms->m_distribution )
+    // pociatocna zmena pravdepodobnosti rozdelenia
+    double changedDistribution  = 0.1;
+    double diff = 0.01;
+
+    // 10 skupin
+    int groupSize = (pdlms->m_rows/2) / 10;
+    int j = 0;
+
+    // najvacsia oprava ma najvacsi prirastok pravdepodobnosti
+    // ze bude odstranena z nahodneho vzoru v dalsom kroku
+    for(unsigned int i = vsort.size() - 1; i > pdlms->m_rows/2; i--)
     {
-        cout <<  a <<" ";
-    }
-    cout << endl;*/
+        index = vsort[i].index - 1;
 
-    for(auto a : pdlms->m_distribution )
-    {
-        sum += a;
+        if(pdlms->m_distribution[index] < 1.0)
+        {
+            pdlms->m_distribution[index] += changedDistribution;
+        }
+
+        if(j < groupSize) j++;
+        else
+        {
+            changedDistribution -= diff;
+            j=0;
+        }
     }
-    cout << "SUMA:" << sum << endl;
+
+    changedDistribution = 0.1;
+    j=0;
+
+    // najmensia oprava ma najvacsi ubytok pravdepodobnosti
+    // ze bude odstranena z nahodneho vzoru v dalsom kroku
+    for(unsigned int i = 0; i < pdlms->m_rows/2; i++)
+    {
+         index = vsort[i].index - 1;
+
+         if(pdlms->m_distribution[index] > 0.05)
+         {
+            pdlms->m_distribution[index] -= changedDistribution;
+         }
+
+         if(j < groupSize) j++;
+         else
+         {
+             changedDistribution -= diff;
+             j=0;
+         }
+    }
 }
 
 void DiscreteLms::randomSamples(const std::vector<Pair> &vsort, DiscreteLms *pdlms)

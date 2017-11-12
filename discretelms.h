@@ -45,6 +45,8 @@ public:
 
     double cmpMedian(std::vector<Pair> &vsort);
     static void reweightLinear(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
+    static void reweightExponential(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
+    static void probabilityGroups(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
     static void randomSamples(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
 
     void initDistribution();

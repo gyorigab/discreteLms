@@ -93,12 +93,26 @@ int main(int argc, char *argv[])
     lsq.solve();
     lsq.print_solution();
 
-    // Discrete LMS
-    DiscreteLms dLms(A,b);
 
-    dLms.solve(DiscreteLms::reweightLinear);
+    vector< void (*)(const std::vector<DiscreteLms::Pair> &, DiscreteLms *) > func_vec;
+    vector< string > method;
 
-    //dLms.solve(DiscreteLms::randomSamples);
+    method.push_back("Linearne rozdelenie vah:\n");
+    func_vec.push_back(DiscreteLms::reweightLinear);
+    method.push_back("Exponencialne rozdelenie vah:\n");
+    func_vec.push_back(DiscreteLms::reweightExponential);
+    method.push_back("Rozdelenie vah skupinam merani\n");
+    func_vec.push_back(DiscreteLms::probabilityGroups);
+    method.push_back("Nahodne rozdelenie vah\n");
+    func_vec.push_back(DiscreteLms::randomSamples);
+
+    for(unsigned int i=0; i<func_vec.size();i++)
+    {
+        // Discrete LMS
+        DiscreteLms dLms(A,b);
+        cout << method[i];
+        dLms.solve(func_vec[i]);
+    }
 
     return 0;
 }
