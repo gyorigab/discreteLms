@@ -4,6 +4,7 @@
 #include <matvec.h>
 #include <vector>
 #include <set>
+#include <functional>
 
 using namespace std;
 
@@ -12,6 +13,7 @@ typedef GNU_gama::Mat<double> Mat;
 typedef GNU_gama::Vec<double> Vec;
 
 typedef Vec::iterator Vit;
+typedef std::vector<double>::const_iterator CIT;
 
 class DiscreteLms
 {
@@ -34,20 +36,21 @@ public:
     DiscreteLms(Mat* A, Vec* b);
 
     int generateRandomSampleSize();
+    int generateRandomSampleSet(CIT beg, CIT end);
     int generateRandomSampleSet();
-    int generateRandomSample();
 
-    int solve(void (*rewieghtFunction)(const std::vector<Pair> &, DiscreteLms *));
-    int deleteMatVecRows();
-    int deleteMatVecRowsSet();
+    //int solve(void (*rewieghtFunction)(const std::vector<Pair> &, DiscreteLms *));
+    int solve(std::function< std::vector<double>*(const std::vector<Pair> &vsort)> reweight);
+
+    int deleteMatVecRowsSet(CIT beg, CIT end);
 
     bool exists(unsigned int index);
 
     double cmpMedian(std::vector<Pair> &vsort);
-    static void reweightLinear(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
+/*  static void reweightLinear(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
     static void reweightExponential(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
     static void probabilityGroups(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
-    static void randomSamples(const std::vector<Pair> &vsort, DiscreteLms *pdlms);
+    static void randomSamples(const std::vector<Pair> &vsort, DiscreteLms *pdlms);*/
 
     void initDistribution();
 
@@ -69,7 +72,6 @@ private:
     Index m_sample_size;
 
     unsigned int m_K;
-    vector<double> m_distribution;
     vector<unsigned int> m_deleted_rows;
     set<unsigned int> m_deleted_rows_set;
 
@@ -81,6 +83,7 @@ private:
     double m_max_estimation_diff;
 
     double m_median;
+
 
 };
 

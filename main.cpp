@@ -4,6 +4,7 @@
 #include <discretelms.h>
 #include <lsq.h>
 #include <networkgenerator.h>
+#include <functors.h>
 
 using namespace std;
 
@@ -93,26 +94,29 @@ int main(int argc, char *argv[])
     lsq.solve();
     lsq.print_solution();
 
-
-    vector< void (*)(const std::vector<DiscreteLms::Pair> &, DiscreteLms *) > func_vec;
+    vector< std::function< std::vector<double>*(const std::vector<DiscreteLms::Pair> &vsort)> > functorsVec;
     vector< string > method;
 
     method.push_back("Linearne rozdelenie vah:\n");
-    func_vec.push_back(DiscreteLms::reweightLinear);
-    method.push_back("Exponencialne rozdelenie vah:\n");
-    func_vec.push_back(DiscreteLms::reweightExponential);
-    method.push_back("Rozdelenie vah skupinam merani\n");
-    func_vec.push_back(DiscreteLms::probabilityGroups);
-    method.push_back("Nahodne rozdelenie vah\n");
-    func_vec.push_back(DiscreteLms::randomSamples);
+    functorsVec.push_back(Linear(A->rows()));
 
-    for(unsigned int i=0; i<func_vec.size();i++)
+    method.push_back("Exponencialne rozdelenie vah:\n");
+    functorsVec.push_back(Eexponential(A->rows()));
+
+    method.push_back("Rozdelenie vah skupinam merani\n");
+    functorsVec.push_back(ProbabilityGroups(A->rows()));
+
+    method.push_back("Nahodne rozdelenie vah\n");
+    functorsVec.push_back(Random(A->rows()));
+
+    for(unsigned int i=0; i<functorsVec.size();i++)
     {
         // Discrete LMS
         DiscreteLms dLms(A,b);
         cout << method[i];
-        dLms.solve(func_vec[i]);
+        dLms.solve(functorsVec[i]);
     }
+
 
     return 0;
 }
